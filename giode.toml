@@ -1,0 +1,12 @@
+[app]
+name = "Gedanken"
+id = "com.gedanken.physics"
+version = "0.1.0"
+build = 1
+platforms = ["android", "ios"]
+description = "Physics from motion to black holes, with the math and the history."
+splash_color = "#0a0d16"
+
+[android]
+min_sdk = 24
+icon_background = "#0a0d16"
