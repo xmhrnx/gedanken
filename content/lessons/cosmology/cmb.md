@@ -30,8 +30,8 @@ Wien's law gives the wavelength at which a blackbody is brightest: a constant, 2
 
 ## Found by accident
 
-::: history 1948 · Washington, D.C.
-Ralph Alpher and Robert Herman, extending Gamow's work on how nuclei formed in the early universe, realised that the hot early radiation should still exist, cooled by the expansion. They estimated its present temperature at about 5 K, close to the true value. The prediction attracted little attention. Radio astronomy was in its infancy, nobody thought such faint radiation spread evenly over the sky could be measured, and the steady-state theory, which predicted no such radiation, was gaining support. For more than a decade the idea was largely forgotten, even by some of the people who had worked on it.
+::: history 1948 · Maryland
+Ralph Alpher and Robert Herman, extending Gamow's work on how nuclei formed in the early universe, realised that the hot early radiation should still exist, cooled by the expansion. They estimated its present temperature at about 5 K, close to the true value. The prediction attracted little attention. Radio astronomy was in its infancy, nobody thought such faint radiation spread evenly over the sky could be measured, and the steady-state theory, which predicted no such radiation, had many supporters. For more than a decade the idea was largely forgotten, even by some of the people who had worked on it.
 :::
 
 ::: history 1964–65 · Holmdel, New Jersey
