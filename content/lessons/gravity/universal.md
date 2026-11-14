@@ -1,86 +1,104 @@
-Kepler's laws describe the planets; they do not explain them. Newton's step was to propose that one force, the same one that drops an apple, holds the Moon in orbit and the planets around the Sun, and to work out exactly how that force must weaken with distance.
+Kepler's laws describe how the planets move, but they do not say why. By the 1680s several people in London suspected that the Sun pulls on the planets with a force that weakens with distance, but nobody could show that such a force would produce Kepler's ellipses, or say exactly how fast it should weaken. Isaac Newton did both, and went further. He proposed that the force holding the planets to the Sun is the same force that makes an apple fall, and he tested that claim with numbers anyone could check. This lesson follows his reasoning: first from Kepler's third law to the inverse-square law, then to the test that showed gravity on Earth and gravity in the sky are one thing.
 
-## From Kepler's third law to the inverse square
+## What does a curved path require?
 
-A body moving in a circle needs a centripetal acceleration (an acceleration toward the centre) of v²/r, as the circular motion lesson showed. Most planetary orbits are close to circles, so treat them as circles and ask what acceleration the Sun must supply.
+Start with what an orbit needs. Newton's first law says that a body left alone moves in a straight line at steady speed. A planet does not do that: it curves around the Sun. So something must be acting on it, and the question is what kind of force, and how strong.
+
+For motion in a circle the answer was already known. A body moving at speed v around a circle of radius r is constantly changing direction, and the acceleration needed to do that points toward the centre and has size v²/r. This is called **centripetal acceleration**, from the Latin for "centre-seeking", and it was worked out in the lesson on circular motion. Most planetary orbits are close to circles (Earth's eccentricity is 0.017), so as a first approximation we can treat them as circles and ask what acceleration the Sun must supply to each planet. Kepler's third law then tells us how that acceleration must change with distance.
 
 ::: steps The inverse-square law from Kepler's third law
 $ a = \frac{v^2}{r}
-Centripetal acceleration for a circular orbit of radius r at speed v.
+This is the centripetal acceleration of a planet moving at speed v on a circular orbit of radius r around the Sun. Whatever the Sun does to the planet, it must produce exactly this acceleration, pointing inward, or the planet would not stay on the circle. The trouble is that v is not one of the things Kepler's law mentions, so we want to rewrite it.
 ---
 $ v = \frac{2\pi r}{T}
-In one period T the planet covers one circumference.
+In one period T the planet travels once around the circle, a distance 2πr. Since it moves at steady speed on a circle, its speed is this distance divided by the time. This step expresses the speed through the period and the radius, the two quantities Kepler's third law connects.
 ---
 $ a = \frac{4\pi^2 r}{T^2}
-Substitute v into a = v²/r.
+Put this expression for v into a = v²/r. Squaring 2πr/T gives 4π²r²/T², and dividing by r leaves one power of r on top. The acceleration is now written entirely in terms of the orbit's radius and its period.
 ---
 $ T^2 = Cr^3
-Kepler's third law: T² is proportional to r³, with the same constant C for every planet.
+Kepler's third law says T² is proportional to r³ (for a circle, the semi-major axis is just the radius). C is the constant of proportionality, and the important point is that it is the same for every planet. This is the observed fact that will decide how the force behaves.
 ---
 $ a = \frac{4\pi^2}{C} \cdot \frac{1}{r^2}
-Substitute T² = Cr³. The acceleration toward the Sun falls off as the inverse square of the distance, and the factor in front is the same for every planet.
+Replace T² in the previous expression with Cr³. On top there is one power of r, below there are three, so two powers remain in the denominator. The acceleration toward the Sun falls off as the inverse square of the distance: twice as far, a quarter as much. And the factor in front, 4π²/C, is the same for every planet, so the acceleration depends only on where a planet is, not on which planet it is.
 :::
 
-So the Sun pulls each planet with an acceleration ∝ 1/r², whatever the planet. The force is mass times acceleration, so the force on a planet is proportional to its mass m. By Newton's third law the planet pulls the Sun equally hard, so the force should be proportional to the Sun's mass M as well. Put together:
+That last point deserves a pause. Mercury and Jupiter are very different bodies, yet if you placed either of them at the same distance from the Sun, it would accelerate toward the Sun at the same rate. That is exactly how bodies fall on Earth: a heavy stone and a light one fall together, as Galileo had argued. The Sun's pull behaves like ordinary falling.
+
+## From an acceleration to a force
+
+An acceleration that is the same for every planet means a force that is proportional to each planet's mass, because force equals mass times acceleration. A planet twice as massive needs twice the force to be given the same acceleration, and gets it. So the Sun's pull on a planet of mass m goes as m/r².
+
+Newton then turned the argument around using his third law, which says that forces come in equal and opposite pairs. If the Sun pulls the planet, the planet pulls the Sun just as hard. By the same reasoning that made the force proportional to the planet's mass, it should also be proportional to the Sun's mass M: neither body is special. Putting the two together gives a force proportional to the product of the masses and inversely proportional to the square of the distance between them:
 
 ::: equation Newton's law of universal gravitation
 F = \frac{GMm}{r^2}
 :::
 
-G is a universal constant, now known to be 6.674 × 10⁻¹¹ N m² kg⁻². Its smallness is why you feel no pull from a nearby building. Measuring it took another century, as a later lesson describes.
+G is a constant of nature, the same everywhere, which sets how strong gravity is. Its modern value is 6.674 × 10⁻¹¹ N m² kg⁻². That is an extraordinarily small number. Two people standing a metre apart attract each other with a force of a few ten-millionths of a newton, far too small to notice, and you feel no pull at all from a large building next to you. Gravity seems strong only because Earth is enormous. Newton could not measure G, and nobody did for more than a century, as a later lesson in this chapter describes.
 
-## The Moon test
+## Is it really the same force? The Moon test
 
-The bold claim is *universal*: the force that keeps the Moon in orbit is ordinary terrestrial gravity, weakened by distance. That can be checked with numbers available in Newton's time. The Moon is about 60 Earth radii away (384,400 km against 6,371 km). Gravity at Earth's surface, one Earth radius from the centre, gives g = 9.81 m/s². If gravity is inverse-square, at 60 times the distance it should be 60² = 3,600 times weaker.
+The word "universal" makes a bold claim: that the force keeping the Moon in its orbit is the same gravity that pulls an apple to the ground, merely weakened by distance. Before Newton, most people assumed the heavens and the Earth followed different rules. The claim could be tested, because every number needed was already known.
+
+The Moon is about 60 Earth radii from Earth's centre: about 384,400 km, against an Earth radius of 6,371 km. An apple at the surface is one Earth radius from the centre and falls with acceleration g = 9.81 m/s². If gravity weakens as the inverse square of distance, then at 60 times the distance it should be 60² = 3,600 times weaker. Meanwhile, the Moon's actual acceleration can be worked out from its orbit alone, with no theory of gravity at all, just from how far away it is and how long it takes to go round. If the two numbers agree, the Moon is falling exactly as an apple would at that height.
 
 ::: steps Newton's Moon test
 $ a_{\text{pred}} = \frac{g}{60^2} = \frac{9.81}{3600} \approx 2.72 \times 10^{-3}\,\text{m/s}^2
-The acceleration the inverse-square law predicts at the Moon's distance.
+This is the prediction. Take the measured acceleration of falling bodies at Earth's surface and divide it by 60², because the inverse-square law says the pull is 3,600 times weaker at 60 times the distance. It assumes that Earth pulls as if its mass were concentrated at its centre, a point we return to below.
 ---
 $ r = 3.844 \times 10^8\,\text{m}, \quad T = 27.32\,\text{days} = 2.361 \times 10^6\,\text{s}
-The Moon's orbital radius and its period relative to the stars (the sidereal month).
+These are the Moon's measured orbital radius and its period. The period used is the **sidereal month**, the time to return to the same place among the stars, rather than the 29.5 days between full Moons, which is longer because Earth has moved along its own orbit in the meantime. Converting days to seconds keeps the units consistent with g.
 ---
 $ a_{\text{Moon}} = \frac{4\pi^2 r}{T^2} = \frac{4\pi^2 \times 3.844 \times 10^8}{(2.361 \times 10^6)^2}
-The Moon's actual centripetal acceleration, from its observed orbit alone.
+This is the Moon's actual centripetal acceleration, from the formula derived above for any circular orbit. Nothing about gravity goes into it: it is pure geometry and timing, the acceleration anything must have to move round that circle in that time.
 ---
 $ a_{\text{Moon}} \approx 2.72 \times 10^{-3}\,\text{m/s}^2
-The two agree to better than 1%. In one second the Moon falls about 1.4 mm away from a straight line toward Earth, exactly as much as an apple 60 Earth radii up would fall.
+Working out the numbers gives the same value as the prediction, to better than 1%. The Moon is being pulled toward Earth exactly as hard as inverse-square gravity, starting from the apple, says it should be.
 :::
 
-::: note
-One force law, F = GMm/r², explains a falling apple, the Moon's orbit and Kepler's laws. Gravity on Earth and gravity in the heavens are the same thing.
-:::
+It helps to picture what this number means. In one second, the Moon falls about 1.4 mm away from the straight line it would otherwise follow. That is a tiny drop compared with the kilometre or so it travels sideways in the same second, which is why its path curves so gently. It is also exactly how far an apple would fall in its first second if you could hold it 60 Earth radii up and let go. The Moon is falling all the time; it simply moves sideways fast enough that it keeps missing.
 
 ::: history 1666–1687 · Woolsthorpe and Cambridge
-Newton later said that in 1666, at home in Lincolnshire while plague closed Cambridge, he compared the force holding the Moon with gravity at Earth's surface and "found them answer pretty nearly". His early numbers matched only roughly, perhaps because he used a poor value for Earth's size, and he set the problem aside. In 1684 Edmond Halley asked him what orbit an inverse-square force would produce; Newton replied that he had calculated it: an ellipse. Halley pressed him to publish, and the result was the *Principia* (1687). Robert Hooke had suggested an inverse-square attraction in letters to Newton and claimed credit; Newton, furious, cut references to him from the book. The apple story comes from Newton himself, told decades later in his old age.
+In 1665 plague closed the University of Cambridge, and the young Newton went home to his family's farm at Woolsthorpe in Lincolnshire. There, he later said, he compared the force needed to hold the Moon in its orbit with the force of gravity at Earth's surface and "found them answer pretty nearly". The match was rough, possibly because he used a poor value for Earth's size, and he left the problem for years. Meanwhile Robert Hooke, in letters to Newton around 1680, suggested that the planets might be held by an attraction falling off as the inverse square of distance, but he could not work out what orbit it would produce. In 1684 Edmond Halley visited Newton and asked exactly that question. Newton answered at once that he had calculated it: an ellipse. He could not find the calculation, so he redid it, and the work grew over the next two and a half years into the *Principia*, published in 1687 at Halley's expense. Hooke claimed credit for the inverse square; Newton, furious, removed references to him. The story of the falling apple comes from Newton himself, told in conversation near the end of his life, and he presented it as the moment the question occurred to him, not the answer.
 :::
 
-## Measuring from the centre
+## Why measure from Earth's centre?
 
-The Moon test quietly assumes that Earth pulls as if all its mass sat at its centre, so that an apple on the surface is "one Earth radius" away. That is not obvious: the ground under your feet is much closer than the far side of the planet. Newton proved it: a spherically symmetric body attracts objects outside it exactly as a point mass at its centre would. This **shell theorem** is part of why the *Principia* took so long. It gives gravity at the surface of any round planet:
+The Moon test quietly assumed something that is not at all obvious. It treated the apple as being "one Earth radius" from Earth, as if all of Earth's mass were concentrated at its centre. But Earth is not a point. The ground under the apple is a metre away, while the far side of the planet is nearly 13,000 km away, and every piece pulls with a different strength in a different direction. Why should all those pulls add up to the pull of a single point mass at the centre?
+
+Newton proved that they do. A body whose mass is arranged in spherically symmetric layers, the same in every direction from the centre, attracts anything outside it exactly as if all its mass were at the centre. This result is called the **shell theorem**, and it depends on the force being inverse-square: for most other force laws it would fail. Proving it was one reason the *Principia* took as long as it did. It justifies the Moon test, and it gives a simple formula for gravity at the surface of any round planet of mass M and radius R:
 
 ::: equation Surface gravity of a planet of mass M and radius R
 g = \frac{GM}{R^2}
 :::
 
-Newton also showed that an inverse-square force produces exactly Kepler's ellipses and his equal-area law, and that the planets' small tugs on one another explain the departures from Kepler that astronomers measured. In 1846 the same arithmetic, applied to wobbles in the orbit of Uranus, located an unseen planet: Neptune was found within about a degree of the predicted position.
+::: note
+One force law, F = GMm/r², explains a falling apple, the Moon's orbit and all three of Kepler's laws. Gravity on Earth and gravity in the heavens are the same force, weakening with the square of the distance.
+:::
 
-Newton's law is not the last word. It does not say how the pull is transmitted, a gap Newton himself admitted. General relativity replaces it, but in weak gravity the two agree so closely that spacecraft are still navigated with Newton's formula.
+## What the law explained, and what it left open
+
+The circular-orbit argument above only used Kepler's third law. Newton went much further. He showed that an inverse-square force produces orbits that are exactly ellipses with the Sun at a focus, Kepler's first law, and that any force directed toward a fixed centre produces equal areas in equal times, the second. The three separate rules that Kepler had found by fitting data became consequences of one force.
+
+The law also explained where Kepler was slightly wrong. Since every mass attracts every other, the planets pull on one another, and their orbits wobble a little away from perfect ellipses. Astronomers spent the following century and a half calculating these wobbles, and the calculations matched the observations. The most dramatic success came in 1846. Uranus had been drifting from its predicted path, and Urbain Le Verrier in Paris worked out where an unseen planet would have to be to cause the drift. Johann Galle in Berlin pointed a telescope there and found Neptune within about a degree of the predicted spot.
+
+Newton's law is not the final word, and Newton knew it had a gap. It says how strong gravity is, but not how the pull reaches across empty space, and Newton admitted he had no explanation for that. Einstein's general relativity, more than two centuries later, replaced the idea of a force with curved space and time. But in weak gravity, which covers everything in the solar system except a few very precise measurements, the two theories agree so closely that spacecraft are still navigated with Newton's formula.
 
 ::: quiz
-? If you moved to twice your current distance from Earth's centre, your weight would be
+? If you moved to twice your present distance from Earth's centre, your weight would be
 - half as large
 + a quarter as large
 - unchanged
-= F ∝ 1/r²: doubling r divides the force by 4.
+= Gravity goes as 1/r², so doubling the distance divides the force by 2² = 4.
 ? What does the Moon test compare?
 - The Moon's mass with Earth's mass
-+ The Moon's centripetal acceleration with g reduced by 60²
++ The Moon's centripetal acceleration with g reduced by a factor of 60²
 - The time light takes to reach the Moon with the length of a month
-= The Moon is about 60 Earth radii away, so inverse-square gravity predicts g/3600 there, which matches 4π²r/T² for the Moon's orbit.
-? Kepler's third law (T² ∝ r³) implies the Sun's pull on a planet goes as
+= The Moon is about 60 Earth radii away, so inverse-square gravity predicts an acceleration of g/3600 there. That matches 4π²r/T², the acceleration worked out from the Moon's orbit alone.
+? Kepler's third law (T² ∝ r³) implies that the Sun's pull on a planet goes as
 - 1/r
 + 1/r²
 - 1/r³
-= a = 4π²r/T² and T² ∝ r³ give a ∝ r/r³ = 1/r².
+= The centripetal acceleration is 4π²r/T². Replacing T² with a constant times r³ leaves r/r³, which is 1/r².
 :::
