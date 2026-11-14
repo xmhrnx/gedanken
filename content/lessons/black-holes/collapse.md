@@ -10,7 +10,7 @@ Two of the most authoritative voices said so explicitly. Arthur Eddington, the m
 
 A star like the Sun is held up by the pressure of hot gas. Its core is kept at millions of degrees by nuclear fusion, and the gas pushes outward against gravity's inward pull. When the fuel runs out, fusion stops, the core cools, the gas pressure drops, and gravity squeezes the core smaller. If heat were the only source of pressure, the squeezing would never stop.
 
-The first sign that something else can take over came from the faint companion of Sirius, the brightest star in the night sky. By 1915 astronomers knew that this companion, Sirius B, had roughly the mass of the Sun, and measurements of its colour showed that it was hot. A hot star that is so faint must be very small, and Sirius B turned out to be about the size of the Earth. A teaspoon of its matter would weigh several tonnes. Objects like it are called **white dwarfs**: stellar remnants about as massive as the Sun but packed into roughly the volume of the Earth. They are cooling, with no fuel left to burn, yet they do not collapse. Something other than heat holds them up.
+The first sign that something else can take over came from the faint companion of Sirius, the brightest star in the night sky. By 1915 astronomers knew that this companion, Sirius B, had roughly the mass of the Sun, and measurements of its colour showed that it was hot. A hot star that is so faint must be very small, and Sirius B turned out to be about the size of the Earth. A teaspoon of its matter would weigh about ten tonnes. Objects like it are called **white dwarfs**: stellar remnants about as massive as the Sun but packed into roughly the volume of the Earth. They are cooling, with no fuel left to burn, yet they do not collapse. Something other than heat holds them up.
 
 That something is quantum mechanics. Electrons obey the **Pauli exclusion principle**: no two electrons can occupy the same quantum state. In ordinary matter this hardly matters, because there are far more available states than electrons. But squeeze electrons into a very small volume, and the low-momentum states fill up, so each additional electron is forced into a state of higher momentum than the last. Even at zero temperature, the electrons are moving fast, and fast-moving particles push on their surroundings. This outward push is called **electron degeneracy pressure**, and it needs no heat at all. In 1926 the British physicist Ralph Fowler showed that it could hold up a white dwarf indefinitely, however cold the star became. The problem seemed solved.
 
@@ -48,7 +48,7 @@ The numerator changes sign when the two terms are equal. For smaller N the elect
 $ \frac{\hbar c}{G m_p^2} \approx 1.7 \times 10^{38} \;\Rightarrow\; N_{\text{max}} \approx 2 \times 10^{57}
 Now evaluate. The ratio ħc/(Gm_p²) compares the strength of quantum effects to the strength of gravity between two protons, and because gravity is so weak, it is enormous. Raising it to the power 3/2 gives the critical number of nucleons.
 ---
-$ M_{\text{max}} \sim N_{\text{max}}\, m_p \approx 4 \times 10^{30}\,\text{kg} \approx 2\,M_\text{Sun}
+$ M_{\text{max}} \sim N_{\text{max}}\, m_p \approx 4 \times 10^{30}\,\text{kg} \approx 2\,M_{\text{Sun}}
 Multiply by the mass of a nucleon, about 1.67 × 10⁻²⁷ kg, to get the maximum mass, about twice the mass of the Sun. A careful calculation that follows how density and pressure vary through a real star, and that counts the electrons correctly, lowers this to about 1.4 solar masses.
 :::
 
@@ -90,7 +90,7 @@ The name came last. In late 1967, John Wheeler, who a decade earlier had argued 
 - Because all stars have the same composition
 + Because the limit comes out in terms of constants of nature only: ħ, c, G and the proton mass
 - Because white dwarfs have no electrons
-= The scaling argument gives N_max ∼ (ħc/Gm_p²)^(3/2), with no property of the particular star in it. Only the mix of electrons per nucleon adjusts the number slightly.
+= The scaling argument gives N_max ∼ (ħc/Gm_p²)^(3/2), with no property of the particular star in it. The only other ingredient is the number of electrons per nucleon, which is one half for the helium, carbon and oxygen that real white dwarfs are made of.
 ? What did Penrose's 1965 theorem add to Oppenheimer and Snyder's result?
 + It showed that singularities form even without perfect spherical symmetry
 - It showed that collapse stops at the neutron-star stage
