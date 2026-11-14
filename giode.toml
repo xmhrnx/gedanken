@@ -5,8 +5,18 @@ version = "0.1.0"
 build = 1
 platforms = ["android", "ios"]
 description = "Physics from motion to black holes, with the math and the history."
+# iOS home-screen icon (and Android 7 and earlier). Made by tools/make_icon.py.
+icon = "assets/icon.png"
+# Launch background on both platforms: the icon's outer colour and the
+# app's page colour, so launch, splash and first frame read as one.
 splash_color = "#0a0d16"
 
 [android]
 min_sdk = 24
-icon_background = "#0a0d16"
+# The app sends no notifications, so it asks for no notification permission.
+notifications = false
+# Adaptive icon layers (Android 8+); Android 12+ shows them on the splash.
+icon_foreground = "assets/android-foreground.png"
+icon_background = "assets/android-background.png"
+# Themed icons (Android 13+).
+icon_monochrome = "assets/android-monochrome.png"
