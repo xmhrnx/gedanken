@@ -18,6 +18,7 @@ var Orbitals = []Orbital{
 	{"1s", 5, func(r, _ float64) float64 { return math.Exp(-r) }},
 	{"2s", 13, func(r, _ float64) float64 { return (2 - r) * math.Exp(-r/2) }},
 	{"2p", 12, func(r, c float64) float64 { return r * c * math.Exp(-r/2) }},
+	{"3s", 27, func(r, _ float64) float64 { return (27 - 18*r + 2*r*r) * math.Exp(-r/3) }},
 	{"3p", 22, func(r, c float64) float64 { return r * (6 - r) * c * math.Exp(-r/3) }},
 	{"3d", 20, func(r, c float64) float64 { return r * r * (3*c*c - 1) * math.Exp(-r/3) }},
 }

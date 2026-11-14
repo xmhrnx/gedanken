@@ -30,3 +30,23 @@ func TestTwoPHasNodalPlane(t *testing.T) {
 		t.Errorf("2p: %d points near z=0, %d with sign matching z", near, up)
 	}
 }
+
+func TestThreeSHasTwoSphericalNodes(t *testing.T) {
+	// 27 - 18r + 2r² = 0 at r = (9 ± 3√3)/2: about 1.90 and 7.10 Bohr radii.
+	var threeS Orbital
+	for _, o := range Orbitals {
+		if o.Name == "3s" {
+			threeS = o
+		}
+	}
+	near := 0
+	for _, p := range SampleOrbital(threeS, 20000, 1) {
+		r := math.Sqrt(p.X*p.X + p.Y*p.Y + p.Z*p.Z)
+		if math.Abs(r-1.902) < 0.05 || math.Abs(r-7.098) < 0.05 {
+			near++
+		}
+	}
+	if near > 60 {
+		t.Errorf("%d points sit on the 3s nodes", near)
+	}
+}
