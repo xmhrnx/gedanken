@@ -88,6 +88,8 @@ Try it on a braking car. A car travelling at 30 m/s brakes with a steady deceler
 
 The structure of equation 4 holds a lesson for every driver. With the final speed zero, it says the stopping distance equals v₀²/2a, so it grows with the square of the starting speed. Halve the speed to 15 m/s, with the same brakes, and the car stops in about 19 m, only a quarter of the distance. Double the speed and the stopping distance quadruples. This is why a modest increase in speed makes such a large difference to whether a car can stop in time.
 
+The same strategy works when a problem has two parts. Suppose an airliner must reach 70 m/s to take off, and its engines give it a steady acceleration of 3 m/s² along the runway. How long a runway does it need, and how long does the take-off run last? For the length, time is neither given nor wanted, so equation 4 applies again, with v₀ = 0: the distance is v²/2a = 4900 ÷ 6 ≈ 820 m. For the time, the position is not needed, so equation 1 is the natural choice: t = v/a = 70 ÷ 3 ≈ 23 s. A quick check with equation 3 confirms that the two answers fit together, since the average speed, 35 m/s, multiplied by 23 s gives about 820 m. Real runways are a good deal longer than this, because an airliner's acceleration falls as it gains speed and because a runway must leave room to abandon a take-off and stop, but the calculation shows the size of the answer and how it was reached.
+
 ::: note
 When acceleration is constant, velocity changes in a straight line with time and position follows a parabola. Four equations follow from the ideas of slope and area; choose the one that leaves out the quantity you neither know nor need.
 :::
