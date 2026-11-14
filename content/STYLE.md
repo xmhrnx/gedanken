@@ -1,42 +1,60 @@
 # Writing lessons
 
-Read this with FORMAT.md before writing or editing a lesson. Good examples of the finished
-standard: `lessons/black-holes/dark-stars.md`, `lessons/fission/discovery.md`,
-`lessons/motion/projectiles.md`.
+Read this with FORMAT.md before writing or editing a lesson. The reference for the voice is
+`lessons/atom/electron.md`: read it first, and match its pace.
 
 ## Reader
 
-An intelligent adult who reads English well. Not PhD level, not "explain like I'm 5".
-They want to understand how physicists reached each idea, with the math shown and the
-history alongside.
+An intelligent adult who reads English well and wants to understand how physicists reached
+each idea. Not a specialist, not a child. They will follow a careful argument gladly; what
+they dislike is being rushed, talked down to, or buried in metaphors.
 
-## Voice
+## Voice: a good lecturer explaining to a smart friend
 
-- Concise and direct. No filler, no hype, no rhetorical warm-ups ("Have you ever wondered…"),
-  no praise of the reader.
-- At most one analogy, and only when it saves time. Never a stack of metaphors.
-- Define an unfamiliar term in one short clause the first time it appears.
-- Don't skip topics; don't go deeper than the lesson needs.
+The lesson should read as if someone who loves the subject were sitting with the reader and
+explaining it properly, with time to spare. That means:
+
+- **Set up the problem before solving it.** Say what was puzzling, what people expected, and
+  why the obvious approach fails. A result lands only when the reader feels the question.
+- **Explain the reasoning, not only the result.** Every claim that matters gets its "because".
+  If a force acts sideways, say why that bends a path into a circle. If a quantity cancels,
+  say why that is useful.
+- **Write in connected paragraphs.** Sentences lead into each other ("So…", "That is why…",
+  "Now suppose…"). No lists of facts, no clipped sentences, no telegraphic fragments.
+- **Pause on results.** After an equation or a number, say what it means, what it implies,
+  and whether it surprised anyone.
+- **Tell history as a story of ideas.** Who was stuck on what, what they tried, what they got
+  wrong, what changed their minds. Dates and names serve the story; never list them.
+- **Keep the language plain.** Define every technical term in a short clause the first time.
+  Use everyday words where they are accurate.
+- **Use at most one analogy per idea**, only where it truly helps, and say where it breaks.
+- **No filler and no condescension.** No "Have you ever wondered…", no "Simply put", no
+  praise of the reader, no "as we all know". Warmth comes from care in explaining, not from
+  chatter.
 
 ## Structure of a lesson
 
-- 400–800 words of prose, split by `##` subheadings.
-- At least one `::: equation` or `::: steps` block. Derivations go in `::: steps`: each step
-  has a `$ ` LaTeX line and 1–3 sentences on why that step is allowed. Show every step a
-  reader needs; skip none.
-- One `::: note` with the lesson's key idea.
-- `::: history` blocks where the history explains how the idea arose: who, when, what they
-  saw, what they got wrong.
-- A `::: model` where one of the models in FORMAT.md fits, with a one-line caption saying what
-  to do or watch. Use only ids from the table.
-- End with `::: quiz`: 2–3 questions, exactly one `+` each, each with an `=` explanation.
-  Questions test understanding, not recall of dates.
+- About 1,200–1,800 words of prose, split by `##` subheadings that read like a sequence of
+  questions answered.
+- Open with a paragraph that says what the lesson is about and why it matters.
+- Derivations go in `::: steps`. Each step has a `$ ` LaTeX line and an explanation of 2–5
+  sentences: what we did, why it is allowed, and what it achieved. Never "rearrange" or
+  "substitute" alone; say what is being rearranged and why.
+- Worked numbers where they make an idea concrete, with units and a sentence on what the
+  number means.
+- One `::: note` with the lesson's key idea, in two or three full sentences.
+- `::: history` blocks where the history explains how the idea arose: written as a short
+  story, not a list.
+- A `::: model` where one of the models in FORMAT.md fits, with a caption saying what to do
+  and what to notice.
+- End with `::: quiz`: 2–3 questions, exactly one `+` each, each with an `=` explanation of
+  one or two full sentences. Questions test understanding, not recall of dates.
 
 ## Accuracy
 
 - Check every number, date and name. Round sensibly and say "about" when rounding.
-- When a simple picture is wrong in detail (Bohr orbits, "virtual particle pairs"), say so in
-  one sentence.
+- When a simple picture is wrong in detail (Bohr orbits, "virtual particle pairs"), say so and
+  say what replaces it.
 
 ## Notation
 

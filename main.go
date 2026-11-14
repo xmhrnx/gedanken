@@ -6,6 +6,7 @@ import (
 	"log"
 
 	"github.com/xmhrnx/giode"
+	"github.com/xmhrnx/giode/formula"
 
 	"gedanken/assets"
 	"gedanken/content"
@@ -15,11 +16,10 @@ import (
 )
 
 func main() {
-	giode.UseGofont()
-	theme.Apply()
-	if err := theme.RegisterFonts(); err != nil {
+	if err := setupFonts(); err != nil {
 		log.Fatal(err)
 	}
+	theme.Apply()
 	if err := giode.RegisterIconsFS(assets.Icons, "icons"); err != nil {
 		log.Fatalf("register icons: %v", err)
 	}
@@ -38,4 +38,14 @@ func main() {
 	if err := app.Run(root.View); err != nil {
 		log.Fatal(err)
 	}
+}
+
+// setupFonts installs the Go fonts, the serif and the math font.
+// UseGofont replaces the font collection, which drops the STIX Two Math
+// font the formula package registered when it was imported, so it is
+// registered again; without it, phones show formula variables as boxes.
+func setupFonts() error {
+	giode.UseGofont()
+	formula.Register()
+	return theme.RegisterFonts()
 }
