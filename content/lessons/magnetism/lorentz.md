@@ -34,7 +34,7 @@ $ r = \frac{mv}{qB}
 Divide both sides by v, which cancels one factor of v, and then rearrange to put r on its own by multiplying both sides by r and dividing by qB. The result says faster or heavier particles make larger circles, because they are harder to turn, while a larger charge or a stronger field makes the circle tighter.
 ---
 $ T = \frac{2\pi r}{v}
-To find the time T for one lap, divide the distance round the circle, its circumference 2πr, by the speed at which the particle travels it.
+To find the time T for one lap, divide the distance round the circle, its circumference 2πr, by the speed at which the particle travels it. The speed never changes, because the magnetic force only ever pushes sideways, so this simple distance-over-speed rule is exact.
 ---
 $ T = \frac{2\pi}{v} \cdot \frac{mv}{qB} = \frac{2\pi m}{qB}
 Replace r with mv/qB from the second step. The speed v now appears on the top and the bottom and cancels. The time for one lap depends only on the particle's mass and charge and on the field.
@@ -68,7 +68,7 @@ $ F = (nAL)\,q v B
 Each carrier, with charge q, drifts along the wire at speed v, straight across the field, so each feels a sideways force qvB. All the carriers are pushed the same way, so the total force is the number of carriers times the force on each.
 ---
 $ I = n q A v
-From the lesson on current, the current in a wire is related to its carriers by I = nqAv: the number per cubic metre, times the charge on each, times the area, times the drift speed.
+From the lesson on current, the current in a wire is related to its carriers by I = nqAv: the number per cubic metre, times the charge on each, times the area, times the drift speed. We bring it in because the force so far is written per charge, and we want it in terms of the current, which is what we actually measure in a wire.
 ---
 $ F = BIL
 Regroup the force from the second step as (nqAv) × L × B and recognise the bracket as the current I. The force depends only on things easy to measure: the field, the current and the length of wire in the field. This is the force that drives every electric motor and loudspeaker.

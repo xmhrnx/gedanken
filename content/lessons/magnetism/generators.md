@@ -14,7 +14,7 @@ $ \tau = 2 \times F \times \frac{b}{2}\sin\theta
 Each force acts at a distance b/2 from the axle, but only the part of that distance at right angles to the force produces turning, which brings in a factor of sin θ. Here θ is the angle between the field and the line sticking straight out of the face of the coil. The two forces twist the coil in the same rotational direction, so their torques add, giving the factor of 2.
 ---
 $ \tau = NBIab\sin\theta
-Multiply out: the 2 and the half cancel, leaving N, B, I and the two side lengths.
+Multiply the terms out. The factor of 2 from the two sides and the half from the lever arm cancel each other, leaving N, B, I and the two side lengths a and b. The product ab is just the area of the coil, which the next step makes explicit.
 ---
 $ \tau = NIAB\sin\theta
 The product ab is just the area A of the coil. So the torque depends on the coil's area and number of turns, the current and the field, and not on the coil's particular shape; a more careful calculation shows this is true for a flat coil of any shape.
