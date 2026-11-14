@@ -78,6 +78,18 @@ func (q *QuizBlock) reset() {
 	}
 }
 
+// quizState is everything the quiz's drawing depends on.
+type quizState struct {
+	current, chosen, correct int
+	skipped                  bool
+}
+
+// Version changes whenever the quiz's drawing would, so a cached
+// drawing of the block is replaced.
+func (q *QuizBlock) Version() any {
+	return quizState{q.current, q.chosen, q.correct, q.skipped}
+}
+
 // Layout draws the current state of the quiz.
 func (q *QuizBlock) Layout(gtx giode.Context) giode.Dimensions {
 	header := giode.Text("Check yourself", giode.Styles{FontSize: 12, FontWeight: giode.FontWeightSemiBold,

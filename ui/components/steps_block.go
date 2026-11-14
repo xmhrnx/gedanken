@@ -31,6 +31,10 @@ func NewStepsBlock(title string, steps []curriculum.Step) *StepsBlock {
 	return b
 }
 
+// Version changes when another step is revealed, so a cached drawing
+// of the block is replaced.
+func (b *StepsBlock) Version() any { return b.shown }
+
 // Layout draws the revealed steps and the controls.
 func (b *StepsBlock) Layout(gtx giode.Context) giode.Dimensions {
 	kids := []giode.Element{
@@ -41,7 +45,7 @@ func (b *StepsBlock) Layout(gtx giode.Context) giode.Dimensions {
 		kids = append(kids, giode.Text(b.title, theme.Heading))
 	}
 	for i := 0; i < b.shown; i++ {
-		kids = append(kids, stepView(i+1, b.formulas[i], b.steps[i], i < len(b.steps)-1))
+		kids = append(kids, stepView(i+1, b.formulas[i], b.steps[i]))
 	}
 	if b.shown < len(b.steps) {
 		kids = append(kids, giode.Row(giode.Styles{Gap: 10, Padding: giode.Inset{Top: 4}}, b.next, b.all))
@@ -51,16 +55,14 @@ func (b *StepsBlock) Layout(gtx giode.Context) giode.Dimensions {
 	return giode.Box(theme.Card.With(giode.Styles{Gap: 14}), kids...).Layout(gtx)
 }
 
-// stepView is one numbered step; more draws the line to the next one.
-func stepView(n int, f *FormulaView, s curriculum.Step, more bool) giode.Element {
-	rail := []giode.Element{
-		giode.Box(giode.Styles{Width: 26, Height: 26, BorderRadius: 13, Background: theme.PrimarySoft,
-			Align: giode.AlignCenter, Justify: giode.JustifyCenter},
-			giode.Text(fmt.Sprint(n), giode.Styles{FontSize: 13, FontWeight: giode.FontWeightBold, Color: theme.Primary})),
-	}
-	if more {
-		rail = append(rail, giode.Box(giode.Styles{Width: 2, FlexGrow: 1, Background: theme.Border}))
-	}
+// stepView is one numbered step: a badge beside the equation and its
+// explanation. (A connecting line between badges would need the row to
+// stretch its children, and Giode's AlignStretch currently mis-measures
+// wrapped text, cutting off the explanation's last line.)
+func stepView(n int, f *FormulaView, s curriculum.Step) giode.Element {
+	badge := giode.Box(giode.Styles{Width: 26, Height: 26, BorderRadius: 13, Background: theme.PrimarySoft,
+		Align: giode.AlignCenter, Justify: giode.JustifyCenter},
+		giode.Text(fmt.Sprint(n), giode.Styles{FontSize: 13, FontWeight: giode.FontWeightBold, Color: theme.Primary}))
 	body := []giode.Element{}
 	if s.Equation != "" {
 		body = append(body, f)
@@ -71,8 +73,8 @@ func stepView(n int, f *FormulaView, s curriculum.Step, more bool) giode.Element
 		opts.Styles.Color = theme.Muted
 		body = append(body, giode.Markdown(s.Explanation, opts))
 	}
-	return giode.Row(giode.Styles{Width: -1, Gap: 12, Wrap: giode.WrapNoWrap, Align: giode.AlignStretch},
-		giode.Stack(giode.Styles{Align: giode.AlignCenter, Gap: 4}, rail...),
+	return giode.Row(giode.Styles{Width: -1, Gap: 12, Wrap: giode.WrapNoWrap, Align: giode.AlignStart},
+		badge,
 		giode.Stack(giode.Styles{FlexGrow: 1, Gap: 6, Padding: giode.Inset{Bottom: 8}}, body...),
 	)
 }
