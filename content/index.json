@@ -7,36 +7,36 @@
         {
           "id": "language",
           "title": "The Language of Physics",
-          "blurb": "Units, vectors, graphs and the two ideas of calculus you actually need.",
+          "blurb": "The handful of tools every later chapter relies on: units, vectors, graphs, and the two ideas from calculus that physics cannot do without.",
           "lessons": [
             {
               "id": "units",
               "title": "Units and Dimensions",
-              "summary": "Why every number needs a unit, and how units catch mistakes.",
+              "summary": "Why every measurement needs a unit, and how checking units catches mistakes before they cost anything.",
               "file": "language/units.md"
             },
             {
               "id": "magnitudes",
               "title": "Orders of Magnitude",
-              "summary": "Scientific notation and estimating the size of anything.",
+              "summary": "Writing very large and very small numbers, and estimating the size of almost anything in a few steps.",
               "file": "language/magnitudes.md"
             },
             {
               "id": "vectors",
               "title": "Scalars and Vectors",
-              "summary": "Quantities with direction, and how to add them.",
+              "summary": "Quantities that have a direction as well as a size, and how to add them correctly.",
               "file": "language/vectors.md"
             },
             {
               "id": "rates",
               "title": "Rates of Change",
-              "summary": "The derivative as the slope of a graph.",
+              "summary": "The derivative: how to find the rate at which something changes at a single instant.",
               "file": "language/rates.md"
             },
             {
               "id": "accumulation",
               "title": "Accumulation",
-              "summary": "The integral as the area under a graph.",
+              "summary": "The integral: how to add up a quantity that keeps changing, and why it undoes the derivative.",
               "file": "language/accumulation.md"
             }
           ]
@@ -50,36 +50,36 @@
         {
           "id": "motion",
           "title": "Motion",
-          "blurb": "Describing how things move before asking why.",
+          "blurb": "How to describe motion precisely, with position, velocity and acceleration, before asking what causes it.",
           "lessons": [
             {
               "id": "velocity",
               "title": "Position, Velocity, Acceleration",
-              "summary": "Three quantities, each the rate of change of the one before.",
+              "summary": "Position, velocity and acceleration, and how each one is the rate of change of the one before.",
               "file": "motion/velocity.md"
             },
             {
               "id": "constant-acceleration",
               "title": "Constant Acceleration",
-              "summary": "Deriving the four equations of motion.",
+              "summary": "Deriving the four equations that describe any motion with steady acceleration.",
               "file": "motion/constant-acceleration.md"
             },
             {
               "id": "free-fall",
               "title": "Free Fall",
-              "summary": "Galileo, falling objects and g = 9.8 m/s².",
+              "summary": "How Galileo discovered that all objects fall with the same acceleration, and what that acceleration is.",
               "file": "motion/free-fall.md"
             },
             {
               "id": "projectiles",
               "title": "Projectile Motion",
-              "summary": "Splitting motion into horizontal and vertical parts.",
+              "summary": "Why a thrown ball follows a parabola, found by treating its sideways and upward motion separately.",
               "file": "motion/projectiles.md"
             },
             {
               "id": "relative-motion",
               "title": "Relative Motion",
-              "summary": "Velocity depends on who is measuring.",
+              "summary": "Why the speed of an object depends on who is measuring it, and how to convert between observers.",
               "file": "motion/relative-motion.md"
             }
           ]
@@ -87,42 +87,42 @@
         {
           "id": "forces",
           "title": "Forces",
-          "blurb": "Newton's three laws and what they explain.",
+          "blurb": "Newton's three laws: what they say, why they replaced two thousand years of Aristotle, and how much they explain.",
           "lessons": [
             {
               "id": "inertia",
               "title": "Inertia",
-              "summary": "Why things keep moving, and why Aristotle was wrong.",
+              "summary": "Why moving things keep moving unless something stops them, and why that idea took so long to accept.",
               "file": "forces/inertia.md"
             },
             {
               "id": "f-ma",
               "title": "F = ma",
-              "summary": "Force, mass and acceleration in one equation.",
+              "summary": "How force, mass and acceleration are connected, and what the most famous equation in mechanics really says.",
               "file": "forces/f-ma.md"
             },
             {
               "id": "action-reaction",
               "title": "Action and Reaction",
-              "summary": "Forces always come in pairs.",
+              "summary": "Why forces always come in equal and opposite pairs, and how that lets anything move at all.",
               "file": "forces/action-reaction.md"
             },
             {
               "id": "friction",
               "title": "Friction and Drag",
-              "summary": "The forces that oppose motion.",
+              "summary": "The forces that resist sliding and moving through air, where they come from and how big they are.",
               "file": "forces/friction.md"
             },
             {
               "id": "circular",
               "title": "Circular Motion",
-              "summary": "Why turning requires a force toward the center.",
+              "summary": "Why moving in a circle needs a force pointing toward the centre, even at constant speed.",
               "file": "forces/circular.md"
             },
             {
               "id": "principia",
               "title": "Newton and the Principia",
-              "summary": "How one book unified heaven and earth.",
+              "summary": "How Newton's book of 1687 explained the fall of an apple and the motion of the Moon with the same law.",
               "file": "forces/principia.md"
             }
           ]
@@ -130,42 +130,42 @@
         {
           "id": "energy",
           "title": "Energy and Momentum",
-          "blurb": "The quantities that never get created or destroyed.",
+          "blurb": "Energy and momentum, the two quantities nature keeps an exact account of, and how that bookkeeping solves problems.",
           "lessons": [
             {
               "id": "work",
               "title": "Work",
-              "summary": "Force applied over a distance.",
+              "summary": "What physicists mean by work, and how it measures the energy a force hands over.",
               "file": "energy/work.md"
             },
             {
               "id": "kinetic-potential",
               "title": "Kinetic and Potential Energy",
-              "summary": "Energy of motion and energy of position.",
+              "summary": "The energy of motion and the energy stored by position, and where the formulas for each come from.",
               "file": "energy/kinetic-potential.md"
             },
             {
               "id": "conservation",
               "title": "Conservation of Energy",
-              "summary": "Solving problems by bookkeeping.",
+              "summary": "Why the total energy never changes, and how that turns hard problems into simple bookkeeping.",
               "file": "energy/conservation.md"
             },
             {
               "id": "power",
               "title": "Power",
-              "summary": "How fast energy is transferred.",
+              "summary": "How quickly energy is transferred, from a light bulb to a power station.",
               "file": "energy/power.md"
             },
             {
               "id": "momentum",
               "title": "Momentum and Collisions",
-              "summary": "Why a rifle kicks back.",
+              "summary": "Why a rifle kicks back when it fires, and what is conserved in every collision.",
               "file": "energy/momentum.md"
             },
             {
               "id": "angular",
               "title": "Angular Momentum",
-              "summary": "Why spinning skaters speed up when they pull in their arms.",
+              "summary": "Why spinning skaters speed up when they pull in their arms, and why planets move faster near the Sun.",
               "file": "energy/angular.md"
             }
           ]
@@ -173,42 +173,42 @@
         {
           "id": "gravity",
           "title": "Gravity",
-          "blurb": "From Kepler's ellipses to escape velocity.",
+          "blurb": "How Kepler's careful measurements of the planets led Newton to a single law of gravity for the whole universe.",
           "lessons": [
             {
               "id": "kepler",
               "title": "Kepler's Laws",
-              "summary": "Three rules extracted from decades of planetary data.",
+              "summary": "The three rules Kepler extracted from decades of planetary observations, and what they meant.",
               "file": "gravity/kepler.md"
             },
             {
               "id": "universal",
               "title": "Universal Gravitation",
-              "summary": "The inverse-square law and where it comes from.",
+              "summary": "How Newton found the inverse-square law of gravity, and tested it against the motion of the Moon.",
               "file": "gravity/universal.md"
             },
             {
               "id": "orbits",
               "title": "Orbits",
-              "summary": "Falling around a planet instead of into it.",
+              "summary": "How a satellite stays up by falling around the Earth instead of into it.",
               "file": "gravity/orbits.md"
             },
             {
               "id": "escape",
               "title": "Escape Velocity",
-              "summary": "How fast you must go to never come back.",
+              "summary": "How fast something must be launched to leave a planet for good, and why mass does not matter.",
               "file": "gravity/escape.md"
             },
             {
               "id": "tides",
               "title": "Tides",
-              "summary": "Gravity that differs from one side of a body to the other.",
+              "summary": "How the Moon raises two tides a day, from the difference in its pull across the Earth.",
               "file": "gravity/tides.md"
             },
             {
               "id": "cavendish",
               "title": "Weighing the Earth",
-              "summary": "Cavendish measures G in a shed in 1798.",
+              "summary": "How Henry Cavendish measured the strength of gravity in 1798, and with it weighed the Earth.",
               "file": "gravity/cavendish.md"
             }
           ]
@@ -216,42 +216,42 @@
         {
           "id": "waves",
           "title": "Oscillations and Waves",
-          "blurb": "Things that repeat, and disturbances that travel.",
+          "blurb": "Things that repeat, like springs and pendulums, and disturbances that travel, like sound and ripples on water.",
           "lessons": [
             {
               "id": "shm",
               "title": "Simple Harmonic Motion",
-              "summary": "Springs, restoring forces and sine waves.",
+              "summary": "Why springs, swings and vibrating atoms all oscillate in the same smooth way.",
               "file": "waves/shm.md"
             },
             {
               "id": "pendulum",
               "title": "The Pendulum",
-              "summary": "Why the period does not depend on the mass.",
+              "summary": "Why a pendulum's swing depends on its length but not on its weight.",
               "file": "waves/pendulum.md"
             },
             {
               "id": "wave-basics",
               "title": "What a Wave Is",
-              "summary": "Wavelength, frequency, speed and amplitude.",
+              "summary": "What a wave is, and how its wavelength, frequency and speed are related.",
               "file": "waves/wave-basics.md"
             },
             {
               "id": "superposition",
               "title": "Superposition and Interference",
-              "summary": "Waves add, and sometimes cancel.",
+              "summary": "What happens when two waves meet: they add, and where they are out of step they cancel.",
               "file": "waves/superposition.md"
             },
             {
               "id": "standing",
               "title": "Standing Waves",
-              "summary": "Guitar strings and resonance.",
+              "summary": "Why a guitar string plays only certain notes, and how standing waves and resonance arise.",
               "file": "waves/standing.md"
             },
             {
               "id": "sound-doppler",
               "title": "Sound and the Doppler Effect",
-              "summary": "Why a passing siren changes pitch.",
+              "summary": "What sound is, and why a siren sounds higher as it approaches and lower as it leaves.",
               "file": "waves/sound-doppler.md"
             }
           ]
@@ -265,24 +265,24 @@
         {
           "id": "fluids",
           "title": "Fluids",
-          "blurb": "Pressure, buoyancy and flow.",
+          "blurb": "How liquids and gases push on things: pressure, why ships float, and what happens when fluids flow.",
           "lessons": [
             {
               "id": "pressure",
               "title": "Pressure",
-              "summary": "Force spread over an area, and why it grows with depth.",
+              "summary": "Force spread over an area, and why the pressure in water and air grows with depth.",
               "file": "fluids/pressure.md"
             },
             {
               "id": "buoyancy",
               "title": "Buoyancy",
-              "summary": "Archimedes and why ships float.",
+              "summary": "Why anything in a fluid is pushed upward, and how a steel ship floats.",
               "file": "fluids/buoyancy.md"
             },
             {
               "id": "bernoulli",
               "title": "Bernoulli's Principle",
-              "summary": "Faster flow, lower pressure.",
+              "summary": "Why faster-flowing fluid has lower pressure, and what that does and does not explain about flight.",
               "file": "fluids/bernoulli.md"
             }
           ]
@@ -290,42 +290,42 @@
         {
           "id": "thermo",
           "title": "Thermodynamics",
-          "blurb": "Heat, engines and the arrow of time.",
+          "blurb": "What heat really is, how engines turn it into work, and why some processes only ever run one way.",
           "lessons": [
             {
               "id": "temperature",
               "title": "Temperature and Heat",
-              "summary": "Not the same thing.",
+              "summary": "Why temperature and heat are different things, and how heat flows from one body to another.",
               "file": "thermo/temperature.md"
             },
             {
               "id": "ideal-gas",
               "title": "The Ideal Gas Law",
-              "summary": "PV = nRT and what each letter means.",
+              "summary": "How pressure, volume and temperature of a gas are linked, and what each letter in PV = nRT means.",
               "file": "thermo/ideal-gas.md"
             },
             {
               "id": "kinetic-theory",
               "title": "Kinetic Theory",
-              "summary": "Temperature as the average energy of molecules.",
+              "summary": "How the pressure of a gas comes from molecules hitting the walls, and what temperature really measures.",
               "file": "thermo/kinetic-theory.md"
             },
             {
               "id": "first-law",
               "title": "The First Law",
-              "summary": "Energy conservation, now including heat.",
+              "summary": "Energy conservation extended to heat: how heating and work together change a system's energy.",
               "file": "thermo/first-law.md"
             },
             {
               "id": "engines",
               "title": "Heat Engines",
-              "summary": "Turning heat into work, and the limit on doing so.",
+              "summary": "How engines turn heat into work, and why no engine can ever turn all of it into work.",
               "file": "thermo/engines.md"
             },
             {
               "id": "entropy",
               "title": "Entropy and the Second Law",
-              "summary": "Why heat flows from hot to cold and never back.",
+              "summary": "Why heat flows from hot to cold and never back, and what entropy measures.",
               "file": "thermo/entropy.md"
             }
           ]
@@ -339,36 +339,36 @@
         {
           "id": "electrostatics",
           "title": "Electric Charge and Fields",
-          "blurb": "Charges at rest and the fields they create.",
+          "blurb": "Electric charge, the force between charges, and the idea of a field that fills the space around them.",
           "lessons": [
             {
               "id": "charge",
               "title": "Electric Charge",
-              "summary": "Two kinds, conserved, and quantized.",
+              "summary": "What electric charge is, the two kinds it comes in, and why it can be neither created nor destroyed.",
               "file": "electrostatics/charge.md"
             },
             {
               "id": "coulomb",
               "title": "Coulomb's Law",
-              "summary": "Another inverse-square law.",
+              "summary": "The force between two charges, how it was measured, and how it compares with gravity.",
               "file": "electrostatics/coulomb.md"
             },
             {
               "id": "field",
               "title": "The Electric Field",
-              "summary": "Force per unit charge, everywhere in space.",
+              "summary": "The idea of an electric field, which describes the force a charge would feel at every point in space.",
               "file": "electrostatics/field.md"
             },
             {
               "id": "potential",
               "title": "Voltage",
-              "summary": "Energy per unit charge.",
+              "summary": "Voltage as energy per unit of charge, and why it is the most useful way to describe a field.",
               "file": "electrostatics/potential.md"
             },
             {
               "id": "capacitors",
               "title": "Capacitors",
-              "summary": "Storing energy in a field.",
+              "summary": "How two metal plates store charge and energy, and where that energy is actually kept.",
               "file": "electrostatics/capacitors.md"
             }
           ]
@@ -376,30 +376,30 @@
         {
           "id": "circuits",
           "title": "Circuits",
-          "blurb": "Charge in motion through wires.",
+          "blurb": "What happens when charge flows through wires, and the simple rules that govern every circuit.",
           "lessons": [
             {
               "id": "current",
               "title": "Current",
-              "summary": "How much charge passes per second.",
+              "summary": "What an electric current is, how fast the charges really move, and why the effect is immediate.",
               "file": "circuits/current.md"
             },
             {
               "id": "ohm",
               "title": "Resistance and Ohm's Law",
-              "summary": "V = IR and why wires heat up.",
+              "summary": "How voltage, current and resistance are related, and why wires heat up when current flows.",
               "file": "circuits/ohm.md"
             },
             {
               "id": "series-parallel",
               "title": "Series and Parallel",
-              "summary": "How components combine.",
+              "summary": "How components combine when connected one after another or side by side, and why houses are wired in parallel.",
               "file": "circuits/series-parallel.md"
             },
             {
               "id": "electric-power",
               "title": "Electrical Power",
-              "summary": "Watts, kilowatt-hours and your electricity bill.",
+              "summary": "How electrical power is measured, what a kilowatt-hour is, and why power lines use high voltage.",
               "file": "circuits/electric-power.md"
             }
           ]
@@ -407,36 +407,36 @@
         {
           "id": "magnetism",
           "title": "Magnetism",
-          "blurb": "Moving charges, magnetic fields and induction.",
+          "blurb": "How moving charges create magnetic fields, and how changing magnetic fields create electricity in turn.",
           "lessons": [
             {
               "id": "magnetic-field",
               "title": "Magnetic Fields",
-              "summary": "Created by moving charge.",
+              "summary": "What a magnetic field is, how moving charges create it, and why there are no separate north and south poles.",
               "file": "magnetism/magnetic-field.md"
             },
             {
               "id": "lorentz",
               "title": "Force on Moving Charges",
-              "summary": "Why charged particles spiral.",
+              "summary": "The force a magnetic field exerts on a moving charge, and why charged particles spiral.",
               "file": "magnetism/lorentz.md"
             },
             {
               "id": "electromagnets",
               "title": "Currents and Electromagnets",
-              "summary": "Ørsted's compass and Ampère's law.",
+              "summary": "How an electric current makes a magnet, from Ørsted's twitching compass to Ampère's law.",
               "file": "magnetism/electromagnets.md"
             },
             {
               "id": "induction",
               "title": "Induction",
-              "summary": "Faraday: a changing magnetic field makes a voltage.",
+              "summary": "Faraday's discovery that a changing magnetic field produces a voltage, the principle behind generators.",
               "file": "magnetism/induction.md"
             },
             {
               "id": "generators",
               "title": "Motors and Generators",
-              "summary": "The machines that power civilization.",
+              "summary": "How motors turn electricity into motion and generators turn motion into electricity.",
               "file": "magnetism/generators.md"
             }
           ]
@@ -444,30 +444,30 @@
         {
           "id": "maxwell",
           "title": "Maxwell and Light",
-          "blurb": "Four equations that predicted the speed of light.",
+          "blurb": "Four equations that unified electricity and magnetism, and predicted that light is an electromagnetic wave.",
           "lessons": [
             {
               "id": "equations",
               "title": "Maxwell's Equations",
-              "summary": "What each of the four says, in words.",
+              "summary": "Maxwell's four equations, explained one at a time in words.",
               "file": "maxwell/equations.md"
             },
             {
               "id": "em-waves",
               "title": "Electromagnetic Waves",
-              "summary": "Fields that sustain each other through empty space.",
+              "summary": "How changing electric and magnetic fields sustain each other and travel through empty space.",
               "file": "maxwell/em-waves.md"
             },
             {
               "id": "speed-of-light",
               "title": "Calculating c",
-              "summary": "How Maxwell found light's speed from electrical constants.",
+              "summary": "How Maxwell calculated the speed of light from two numbers measured with electrical equipment.",
               "file": "maxwell/speed-of-light.md"
             },
             {
               "id": "spectrum",
               "title": "The Spectrum",
-              "summary": "Radio to gamma rays: one phenomenon.",
+              "summary": "Radio waves, light, X-rays and gamma rays: one phenomenon at very different wavelengths.",
               "file": "maxwell/spectrum.md"
             }
           ]
@@ -475,30 +475,30 @@
         {
           "id": "optics",
           "title": "Optics",
-          "blurb": "How light reflects, bends and interferes.",
+          "blurb": "How light reflects, bends and interferes, and how those behaviours show that light is a wave.",
           "lessons": [
             {
               "id": "reflection-refraction",
               "title": "Reflection and Refraction",
-              "summary": "Snell's law and why straws look bent.",
+              "summary": "How light bounces off surfaces and bends as it enters glass or water, and why.",
               "file": "optics/reflection-refraction.md"
             },
             {
               "id": "lenses",
               "title": "Lenses and Images",
-              "summary": "Eyes, cameras and telescopes.",
+              "summary": "How curved glass forms images, and how eyes, cameras and telescopes use it.",
               "file": "optics/lenses.md"
             },
             {
               "id": "diffraction",
               "title": "Diffraction",
-              "summary": "Light bending around edges.",
+              "summary": "Why light spreads out when it passes an edge or a small opening, and what that limits.",
               "file": "optics/diffraction.md"
             },
             {
               "id": "double-slit",
               "title": "The Double Slit",
-              "summary": "Young's proof that light is a wave.",
+              "summary": "Thomas Young's experiment with two narrow slits, and why it proved that light is a wave.",
               "file": "optics/double-slit.md"
             }
           ]
@@ -512,42 +512,42 @@
         {
           "id": "special",
           "title": "Special Relativity",
-          "blurb": "What happens when the speed of light is the same for everyone.",
+          "blurb": "What follows when the speed of light is the same for every observer: slower clocks, shorter lengths, and E = mc².",
           "lessons": [
             {
               "id": "michelson",
               "title": "The Missing Ether",
-              "summary": "Michelson and Morley's null result.",
+              "summary": "The experiment that tried to measure the Earth's motion through the ether, and found nothing.",
               "file": "special/michelson.md"
             },
             {
               "id": "postulates",
               "title": "Einstein's Two Postulates",
-              "summary": "Everything follows from two assumptions.",
+              "summary": "Einstein's two starting assumptions, and why taking them seriously changes everything.",
               "file": "special/postulates.md"
             },
             {
               "id": "time-dilation",
               "title": "Time Dilation",
-              "summary": "Deriving it with a light clock.",
+              "summary": "Why moving clocks run slow, derived step by step with a clock made of light.",
               "file": "special/time-dilation.md"
             },
             {
               "id": "length-contraction",
               "title": "Length Contraction",
-              "summary": "Moving objects are shorter along their motion.",
+              "summary": "Why moving objects are shorter in the direction they travel, and who sees it.",
               "file": "special/length-contraction.md"
             },
             {
               "id": "simultaneity",
               "title": "Relativity of Simultaneity",
-              "summary": "\"At the same time\" depends on the observer.",
+              "summary": "Why two events that happen at the same time for one observer need not for another.",
               "file": "special/simultaneity.md"
             },
             {
               "id": "mass-energy",
               "title": "E = mc²",
-              "summary": "Mass as a form of energy.",
+              "summary": "Where E = mc² comes from, and what it means for mass to be a form of energy.",
               "file": "special/mass-energy.md"
             }
           ]
@@ -555,36 +555,36 @@
         {
           "id": "general",
           "title": "General Relativity",
-          "blurb": "Gravity as the shape of spacetime.",
+          "blurb": "Einstein's theory of gravity, in which mass curves space and time and everything else follows the curves.",
           "lessons": [
             {
               "id": "equivalence",
               "title": "The Equivalence Principle",
-              "summary": "Gravity and acceleration are indistinguishable.",
+              "summary": "Einstein's insight that gravity and acceleration cannot be told apart, and what follows from it.",
               "file": "general/equivalence.md"
             },
             {
               "id": "curved-spacetime",
               "title": "Curved Spacetime",
-              "summary": "Matter tells spacetime how to curve.",
+              "summary": "How mass curves space and time, and why objects in free fall follow those curves.",
               "file": "general/curved-spacetime.md"
             },
             {
               "id": "gravitational-time",
               "title": "Gravitational Time Dilation",
-              "summary": "Clocks run slow low in a gravity well, and GPS corrects for it.",
+              "summary": "Why clocks run slower lower down in a gravitational field, and why GPS has to correct for it.",
               "file": "general/gravitational-time.md"
             },
             {
               "id": "light-bending",
               "title": "Bending Light",
-              "summary": "The 1919 eclipse that made Einstein famous.",
+              "summary": "How gravity bends starlight, and the 1919 eclipse expedition that made Einstein famous.",
               "file": "general/light-bending.md"
             },
             {
               "id": "gravitational-waves",
               "title": "Gravitational Waves",
-              "summary": "Ripples in spacetime, detected in 2015.",
+              "summary": "Ripples in spacetime from colliding black holes, predicted in 1916 and detected in 2015.",
               "file": "general/gravitational-waves.md"
             }
           ]
@@ -592,42 +592,42 @@
         {
           "id": "black-holes",
           "title": "Black Holes",
-          "blurb": "How mathematics predicted objects nobody had seen.",
+          "blurb": "How the mathematics of gravity predicted objects so dense that nothing can escape them, long before anyone saw one.",
           "lessons": [
             {
               "id": "dark-stars",
               "title": "Dark Stars",
-              "summary": "A 1783 Newtonian argument for invisible stars.",
+              "summary": "An eighteenth-century argument, using only Newton's gravity, that some stars might be invisible.",
               "file": "black-holes/dark-stars.md"
             },
             {
               "id": "schwarzschild",
               "title": "Schwarzschild's Solution",
-              "summary": "Solving Einstein's equations in a WWI trench.",
+              "summary": "How Karl Schwarzschild solved Einstein's equations while serving in the First World War.",
               "file": "black-holes/schwarzschild.md"
             },
             {
               "id": "horizon",
               "title": "The Event Horizon",
-              "summary": "What the singularities in the math actually mean.",
+              "summary": "What the strange points in Schwarzschild's solution mean, and what happens at the event horizon.",
               "file": "black-holes/horizon.md"
             },
             {
               "id": "collapse",
               "title": "Can Stars Really Collapse?",
-              "summary": "Chandrasekhar's limit and the end of resistance.",
+              "summary": "Why physicists doubted real stars could become black holes, and the calculations that changed their minds.",
               "file": "black-holes/collapse.md"
             },
             {
               "id": "hawking",
               "title": "Hawking Radiation",
-              "summary": "Black holes are not completely black.",
+              "summary": "How quantum physics makes black holes glow faintly, and why small ones would evaporate.",
               "file": "black-holes/hawking.md"
             },
             {
               "id": "observing",
               "title": "Seeing the Invisible",
-              "summary": "From Cygnus X-1 to the first image of a black hole.",
+              "summary": "How astronomers found black holes, from a hidden companion star to the first image of a shadow.",
               "file": "black-holes/observing.md"
             }
           ]
@@ -641,30 +641,30 @@
         {
           "id": "quantum-birth",
           "title": "The Birth of Quantum Theory",
-          "blurb": "The experiments classical physics could not explain.",
+          "blurb": "The experiments around 1900 that classical physics could not explain, and the strange ideas that could.",
           "lessons": [
             {
               "id": "blackbody",
               "title": "Blackbody Radiation",
-              "summary": "Planck's desperate trick: energy in chunks.",
+              "summary": "Why classical physics failed to explain the colour of hot objects, and Planck's idea that energy comes in chunks.",
               "file": "quantum-birth/blackbody.md"
             },
             {
               "id": "photoelectric",
               "title": "The Photoelectric Effect",
-              "summary": "Einstein's photons and his Nobel Prize.",
+              "summary": "How light knocks electrons out of metal, and why Einstein concluded that light comes in particles.",
               "file": "quantum-birth/photoelectric.md"
             },
             {
               "id": "bohr",
               "title": "The Bohr Atom",
-              "summary": "Electrons on fixed orbits, and why spectra have lines.",
+              "summary": "Bohr's model of the hydrogen atom, why it explained spectral lines, and where it goes wrong.",
               "file": "quantum-birth/bohr.md"
             },
             {
               "id": "de-broglie",
               "title": "Matter Waves",
-              "summary": "If light is a particle, maybe electrons are waves.",
+              "summary": "De Broglie's proposal that electrons behave as waves, and the experiment that confirmed it.",
               "file": "quantum-birth/de-broglie.md"
             }
           ]
@@ -672,48 +672,48 @@
         {
           "id": "quantum-mechanics",
           "title": "Quantum Mechanics",
-          "blurb": "The rules that govern the very small.",
+          "blurb": "The rules that govern atoms and smaller things, where particles behave as waves and outcomes are probabilities.",
           "lessons": [
             {
               "id": "wavefunction",
               "title": "The Wavefunction",
-              "summary": "A wave of probability.",
+              "summary": "The wavefunction, and how its size at each point gives the chance of finding a particle there.",
               "file": "quantum-mechanics/wavefunction.md"
             },
             {
               "id": "schrodinger",
               "title": "The Schrödinger Equation",
-              "summary": "How the wavefunction changes in time.",
+              "summary": "The equation that tells the wavefunction how to change, and what it predicts for a trapped particle.",
               "file": "quantum-mechanics/schrodinger.md"
             },
             {
               "id": "uncertainty",
               "title": "The Uncertainty Principle",
-              "summary": "Not a measurement problem, a property of waves.",
+              "summary": "Why position and momentum cannot both be sharp, as a property of waves rather than a flaw in measuring.",
               "file": "quantum-mechanics/uncertainty.md"
             },
             {
               "id": "measurement",
               "title": "Measurement",
-              "summary": "What happens when you look.",
+              "summary": "What happens to a quantum system when it is measured, and why physicists still argue about it.",
               "file": "quantum-mechanics/measurement.md"
             },
             {
               "id": "tunneling",
               "title": "Tunneling",
-              "summary": "Passing through walls that classical physics forbids.",
+              "summary": "How particles pass through barriers they do not have the energy to climb over.",
               "file": "quantum-mechanics/tunneling.md"
             },
             {
               "id": "spin",
               "title": "Spin",
-              "summary": "Intrinsic angular momentum with no classical picture.",
+              "summary": "The built-in angular momentum of particles, discovered by accident with a beam of silver atoms.",
               "file": "quantum-mechanics/spin.md"
             },
             {
               "id": "entanglement",
               "title": "Entanglement",
-              "summary": "Correlations Einstein called spooky.",
+              "summary": "Particles whose properties stay linked however far apart they are, and the experiments that proved it.",
               "file": "quantum-mechanics/entanglement.md"
             }
           ]
@@ -727,42 +727,42 @@
         {
           "id": "atom",
           "title": "The Atom",
-          "blurb": "From indivisible spheres to electron clouds.",
+          "blurb": "How the atom went from an indivisible ball to a tiny nucleus surrounded by clouds of electrons.",
           "lessons": [
             {
               "id": "electron",
               "title": "Discovering the Electron",
-              "summary": "Thomson's cathode rays, 1897.",
+              "summary": "How J. J. Thomson discovered the electron in 1897, and showed that atoms have smaller parts.",
               "file": "atom/electron.md"
             },
             {
               "id": "rutherford",
               "title": "Rutherford's Nucleus",
-              "summary": "Gold foil and the empty atom.",
+              "summary": "How firing alpha particles at gold foil revealed that atoms are mostly empty space around a tiny nucleus.",
               "file": "atom/rutherford.md"
             },
             {
               "id": "orbitals",
               "title": "Orbitals and Quantum Numbers",
-              "summary": "Where electrons actually are.",
+              "summary": "Where electrons actually are in an atom, and the four numbers that describe each one.",
               "file": "atom/orbitals.md"
             },
             {
               "id": "periodic",
               "title": "The Periodic Table Explained",
-              "summary": "Pauli's exclusion principle builds chemistry.",
+              "summary": "How the exclusion principle arranges electrons in shells, and why that produces the periodic table.",
               "file": "atom/periodic.md"
             },
             {
               "id": "spectra",
               "title": "Spectra",
-              "summary": "Fingerprints of the elements.",
+              "summary": "Why each element gives off light only at particular colours, and how that identifies it across the universe.",
               "file": "atom/spectra.md"
             },
             {
               "id": "lasers",
               "title": "Lasers",
-              "summary": "Stimulated emission put to work.",
+              "summary": "How stimulated emission produces light of a single colour moving in step, and how lasers use it.",
               "file": "atom/lasers.md"
             }
           ]
@@ -770,36 +770,36 @@
         {
           "id": "nucleus",
           "title": "The Nucleus",
-          "blurb": "The tiny, dense core and the force that holds it together.",
+          "blurb": "The small, dense core of every atom, the force that holds it together, and why some nuclei fall apart.",
           "lessons": [
             {
               "id": "nucleons",
               "title": "Protons and Neutrons",
-              "summary": "Chadwick finds the neutron, 1932.",
+              "summary": "How the neutron was found in 1932, and what the nucleus is made of.",
               "file": "nucleus/nucleons.md"
             },
             {
               "id": "strong-force",
               "title": "The Strong Force",
-              "summary": "Why the nucleus doesn't fly apart.",
+              "summary": "The force that holds protons together in the nucleus despite their electric repulsion.",
               "file": "nucleus/strong-force.md"
             },
             {
               "id": "binding-energy",
               "title": "Binding Energy",
-              "summary": "The missing mass that powers stars and bombs.",
+              "summary": "Why a nucleus weighs less than its parts, and how that missing mass powers stars and bombs.",
               "file": "nucleus/binding-energy.md"
             },
             {
               "id": "radioactivity",
               "title": "Radioactivity",
-              "summary": "Becquerel, the Curies, and alpha, beta, gamma.",
+              "summary": "The discovery that some atoms fall apart by themselves, and the three kinds of radiation they give off.",
               "file": "nucleus/radioactivity.md"
             },
             {
               "id": "half-life",
               "title": "Half-Life",
-              "summary": "Exponential decay and carbon dating.",
+              "summary": "Why radioactive decay follows a steady halving, and how that lets us date ancient objects.",
               "file": "nucleus/half-life.md"
             }
           ]
@@ -807,54 +807,54 @@
         {
           "id": "fission",
           "title": "Fission and the Atomic Bomb",
-          "blurb": "How splitting atoms was discovered, and how it was turned into a weapon.",
+          "blurb": "How splitting heavy atoms was discovered, why it releases so much energy, and how it became a weapon.",
           "lessons": [
             {
               "id": "discovery",
               "title": "The Discovery of Fission",
-              "summary": "Hahn, Strassmann, Meitner and a Christmas walk in 1938.",
+              "summary": "How Hahn, Strassmann, Meitner and Frisch discovered in 1938 that uranium nuclei can split in two.",
               "file": "fission/discovery.md"
             },
             {
               "id": "energy",
               "title": "Where the Energy Comes From",
-              "summary": "Following the binding energy curve to 200 MeV.",
+              "summary": "Why splitting a uranium nucleus releases about two hundred million times more energy than burning a molecule.",
               "file": "fission/energy.md"
             },
             {
               "id": "chain-reaction",
               "title": "Chain Reactions",
-              "summary": "Szilard's idea and exponential growth.",
+              "summary": "How each split releases neutrons that can split more nuclei, and how fast that grows.",
               "file": "fission/chain-reaction.md"
             },
             {
               "id": "critical-mass",
               "title": "Critical Mass",
-              "summary": "Why size and shape decide whether a chain reaction grows.",
+              "summary": "Why a chain reaction only grows if the material is large enough, and why shape and density matter.",
               "file": "fission/critical-mass.md"
             },
             {
               "id": "manhattan",
               "title": "The Manhattan Project",
-              "summary": "From Einstein's letter to the Trinity test.",
+              "summary": "How a letter from Einstein became the largest scientific project of the war, ending in the Trinity test.",
               "file": "fission/manhattan.md"
             },
             {
               "id": "two-designs",
               "title": "Gun-Type and Implosion",
-              "summary": "The two approaches used in 1945, and why both were needed.",
+              "summary": "The two approaches used in 1945, and why plutonium could not be used the same way as uranium.",
               "file": "fission/two-designs.md"
             },
             {
               "id": "hiroshima",
               "title": "Hiroshima and Nagasaki",
-              "summary": "What the weapons did, and the physics of their effects.",
+              "summary": "What the two bombings did, the physics of their effects, and the debate that has followed.",
               "file": "fission/hiroshima.md"
             },
             {
               "id": "reactors",
               "title": "Reactors vs Bombs",
-              "summary": "Same reaction, controlled.",
+              "summary": "How a reactor uses the same reaction under control, and why it cannot explode like a bomb.",
               "file": "fission/reactors.md"
             }
           ]
@@ -862,30 +862,30 @@
         {
           "id": "fusion",
           "title": "Fusion",
-          "blurb": "Joining light nuclei: the power source of stars.",
+          "blurb": "How joining light nuclei powers the Sun, why it is so hard to do on Earth, and the weapons and reactors it led to.",
           "lessons": [
             {
               "id": "stars",
               "title": "How Stars Shine",
-              "summary": "Bethe and the proton–proton chain.",
+              "summary": "How the Sun shines by fusing hydrogen into helium, worked out by Hans Bethe in 1939.",
               "file": "fusion/stars.md"
             },
             {
               "id": "coulomb-barrier",
               "title": "The Coulomb Barrier",
-              "summary": "Why fusion needs millions of degrees, and how tunneling helps.",
+              "summary": "Why fusion needs enormous temperatures, and how quantum tunnelling lets the Sun manage at lower ones.",
               "file": "fusion/coulomb-barrier.md"
             },
             {
               "id": "thermonuclear",
               "title": "Thermonuclear Weapons",
-              "summary": "The history of the hydrogen bomb.",
+              "summary": "The history of the hydrogen bomb, and why fusion releases more energy per kilogram than fission.",
               "file": "fusion/thermonuclear.md"
             },
             {
               "id": "fusion-power",
               "title": "Fusion Power",
-              "summary": "Tokamaks, lasers and the long road to a reactor.",
+              "summary": "The long effort to build a fusion power station, from tokamaks to lasers, and how close it is.",
               "file": "fusion/fusion-power.md"
             }
           ]
@@ -899,36 +899,36 @@
         {
           "id": "particles",
           "title": "Particle Physics",
-          "blurb": "What everything is made of, as far as we know.",
+          "blurb": "What everything is made of, as far as anyone knows, and how physicists found out.",
           "lessons": [
             {
               "id": "zoo",
               "title": "The Particle Zoo",
-              "summary": "Accelerators find hundreds of particles.",
+              "summary": "How cosmic rays and accelerators turned up hundreds of new particles in the mid-twentieth century.",
               "file": "particles/zoo.md"
             },
             {
               "id": "quarks",
               "title": "Quarks",
-              "summary": "Order in the zoo.",
+              "summary": "How the many new particles were explained as combinations of a few smaller ones called quarks.",
               "file": "particles/quarks.md"
             },
             {
               "id": "forces-bosons",
               "title": "Forces as Particles",
-              "summary": "Photons, gluons, W and Z.",
+              "summary": "How forces are carried by particles: photons, gluons, and the W and Z bosons.",
               "file": "particles/forces-bosons.md"
             },
             {
               "id": "standard-model",
               "title": "The Standard Model",
-              "summary": "Seventeen particles and their rules.",
+              "summary": "The seventeen particles that make up the Standard Model, and what it still leaves unexplained.",
               "file": "particles/standard-model.md"
             },
             {
               "id": "higgs",
               "title": "The Higgs Boson",
-              "summary": "Where mass comes from, found in 2012.",
+              "summary": "How fundamental particles get their mass, and how the Higgs boson was finally found in 2012.",
               "file": "particles/higgs.md"
             }
           ]
@@ -936,36 +936,36 @@
         {
           "id": "cosmology",
           "title": "Cosmology",
-          "blurb": "The history of the universe as a whole.",
+          "blurb": "The history of the universe as a whole: its expansion, its beginning, and the parts of it we cannot see.",
           "lessons": [
             {
               "id": "expansion",
               "title": "The Expanding Universe",
-              "summary": "Hubble, redshift and receding galaxies.",
+              "summary": "How the light from distant galaxies showed that the universe is expanding.",
               "file": "cosmology/expansion.md"
             },
             {
               "id": "big-bang",
               "title": "The Big Bang",
-              "summary": "Running the expansion backwards.",
+              "summary": "What we learn by running the expansion backwards, from the age of the universe to the first elements.",
               "file": "cosmology/big-bang.md"
             },
             {
               "id": "cmb",
               "title": "The Cosmic Microwave Background",
-              "summary": "The afterglow, found by accident in 1965.",
+              "summary": "The faint glow left over from the early universe, found by accident in 1965.",
               "file": "cosmology/cmb.md"
             },
             {
               "id": "dark-matter",
               "title": "Dark Matter",
-              "summary": "Galaxies spin too fast for what we can see.",
+              "summary": "Why galaxies spin too fast for the matter we can see, and what the missing mass might be.",
               "file": "cosmology/dark-matter.md"
             },
             {
               "id": "dark-energy",
               "title": "Dark Energy",
-              "summary": "The expansion is speeding up.",
+              "summary": "The discovery in 1998 that the expansion of the universe is speeding up.",
               "file": "cosmology/dark-energy.md"
             }
           ]
