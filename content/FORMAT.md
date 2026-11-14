@@ -76,7 +76,8 @@ Model ids and what they show:
 | `binding-curve` | binding energy per nucleon against mass number |
 | `chain-reaction` | generations of fission for a chosen k |
 | `critical-mass` | neutrons escaping a sphere of chosen size |
-| `atom` | animated nucleus with orbiting electrons |
+| `atom` | Rutherford's 1911 planetary picture, labelled as historical |
+| `orbital` | hydrogen orbitals (1s–3d) as electron probability clouds; reader picks one |
 | `orbit` | Newton's cannon: launch speed slider; falls back, circles, ellipses, escapes |
 | `pendulum` | swinging pendulum; length slider, period shown |
 | `wave` | travelling wave; wavelength and frequency sliders, speed shown |

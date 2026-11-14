@@ -1,8 +1,6 @@
 package screens
 
 import (
-	"fmt"
-
 	"github.com/xmhrnx/giode"
 	"github.com/xmhrnx/giode/components/scroll"
 
@@ -18,13 +16,15 @@ type ChapterScreen struct {
 	chapter curriculum.Chapter
 	tracker *progress.Tracker
 	back    giode.Element
+	banner  *components.ChapterBanner
 	rows    []*components.LessonRow
 	scroll  *scroll.Scroll
 }
 
 // NewChapterScreen creates the screen; onLesson opens the i-th lesson.
-func NewChapterScreen(part int, ch curriculum.Chapter, tracker *progress.Tracker, onBack func(), onLesson func(i int)) *ChapterScreen {
-	s := &ChapterScreen{part: part, chapter: ch, tracker: tracker, back: components.NewBackButton(onBack)}
+func NewChapterScreen(part, seed int, ch curriculum.Chapter, tracker *progress.Tracker, onBack func(), onLesson func(i int)) *ChapterScreen {
+	s := &ChapterScreen{part: part, chapter: ch, tracker: tracker, back: components.NewBackButton(onBack),
+		banner: components.NewChapterBanner(part, seed, ch, func() int { return tracker.ChapterDone(ch) })}
 	for i, l := range ch.Lessons {
 		s.rows = append(s.rows, components.NewLessonRow(i+1, l, theme.PartColor(part),
 			func() bool { return tracker.Done(ch.ID, l.ID) },
@@ -43,17 +43,7 @@ func (s *ChapterScreen) Layout(gtx giode.Context) giode.Dimensions {
 }
 
 func (s *ChapterScreen) content() giode.Element {
-	color := theme.PartColor(s.part)
-	done := s.tracker.ChapterDone(s.chapter)
-	kids := []giode.Element{
-		giode.Stack(giode.Styles{Width: -1, Gap: 8, Padding: giode.Inset{Bottom: 6}},
-			giode.Text(fmt.Sprintf("Part %d", s.part+1), theme.Eyebrow.With(giode.Styles{Color: color})),
-			giode.Text(s.chapter.Title, theme.Display),
-			giode.Text(s.chapter.Blurb, giode.Styles{FontSize: 16, Color: theme.Muted, LineHeight: 23}),
-			giode.Progress(float32(done)/float32(len(s.chapter.Lessons)),
-				giode.Styles{Color: color, Background: theme.Border, Height: 4}),
-		),
-	}
+	kids := []giode.Element{s.banner}
 	for _, r := range s.rows {
 		kids = append(kids, r)
 	}

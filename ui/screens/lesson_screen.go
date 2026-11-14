@@ -61,6 +61,7 @@ func (s *LessonScreen) complete() {
 func (s *LessonScreen) Layout(gtx giode.Context) giode.Dimensions {
 	return giode.Stack(giode.Styles{Width: -1, Height: -1},
 		components.TopBar(s.back, s.chapter.Title),
+		components.ReadingProgress(s.scroll.Progress(), theme.PartColor(s.part)),
 		giode.Box(giode.Styles{Width: -1, FlexGrow: 1}, s.scroll),
 	).Layout(gtx)
 }

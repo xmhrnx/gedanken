@@ -3,7 +3,6 @@
 package models
 
 import (
-	"fmt"
 	"math"
 	"time"
 
@@ -106,12 +105,7 @@ func glow(p *giode.Painter, cx, cy, r float32, c giode.Color) {
 
 // lerpColor blends two "#rrggbb" colors.
 func lerpColor(a, b string, t float64) giode.Color {
-	t = math.Max(0, math.Min(1, t))
-	var ar, ag, ab, br, bg, bb int
-	fmt.Sscanf(a, "#%02x%02x%02x", &ar, &ag, &ab)
-	fmt.Sscanf(b, "#%02x%02x%02x", &br, &bg, &bb)
-	mix := func(x, y int) int { return int(float64(x) + (float64(y)-float64(x))*t) }
-	return giode.Color(fmt.Sprintf("#%02x%02x%02x", mix(ar, br), mix(ag, bg), mix(ab, bb)))
+	return theme.Blend(a, b, t)
 }
 
 // keepAnimating asks for another frame while an animation runs.

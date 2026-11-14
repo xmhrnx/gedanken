@@ -6,7 +6,7 @@ var ModelIDs = []string{
 	"slope", "area", "projectile", "falling", "escape", "gravity-well",
 	"light-cones", "binding-curve", "chain-reaction", "critical-mass", "atom",
 	"orbit", "pendulum", "wave", "interference", "gas", "field-lines",
-	"light-clock", "bohr", "wavefunction", "decay",
+	"light-clock", "bohr", "wavefunction", "decay", "orbital",
 }
 
 // KnownModel reports whether id is in ModelIDs.

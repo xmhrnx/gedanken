@@ -17,6 +17,9 @@ import (
 func main() {
 	giode.UseGofont()
 	theme.Apply()
+	if err := theme.RegisterFonts(); err != nil {
+		log.Fatal(err)
+	}
 	if err := giode.RegisterIconsFS(assets.Icons, "icons"); err != nil {
 		log.Fatalf("register icons: %v", err)
 	}

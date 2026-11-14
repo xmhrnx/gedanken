@@ -11,35 +11,60 @@ import (
 	"gedanken/ui/theme"
 )
 
-// FormulaView is a typeset LaTeX formula. When it fits it is placed
-// at the start or in the center; when it is wider than the screen it
-// scrolls sideways.
+// FormulaView is a typeset LaTeX formula. When it fits it is placed at
+// the start or in the center; when it is too wide it is set smaller,
+// down to minScale of its size, and beyond that it scrolls sideways.
 type FormulaView struct {
-	formula  *formula.Formula
-	scroll   *scroll.Scroll
+	src      string
+	size     int
 	centered bool
+	sizes    map[int]*formula.Formula
+	fitted   *formula.Formula
+	scroll   *scroll.Scroll
 }
+
+const minScale = 0.6
 
 // NewFormulaView typesets src at the given size in sp.
 func NewFormulaView(src string, size int, centered bool) *FormulaView {
-	f := formula.New(src, giode.Styles{FontSize: theme.FontSize(size), Color: theme.Text})
-	v := &FormulaView{formula: f, centered: centered}
-	v.scroll = giode.Scroll(func() giode.Element { return f },
+	v := &FormulaView{src: src, size: size, centered: centered, sizes: map[int]*formula.Formula{}}
+	v.fitted = v.at(size)
+	v.scroll = giode.Scroll(func() giode.Element { return v.fitted },
 		giode.Styles{ScrollBar: giode.ScrollBar{Hidden: true}}).Axis(giode.Horizontal)
 	return v
 }
 
-// Layout measures the formula, then centers it or lets it scroll.
-func (v *FormulaView) Layout(gtx giode.Context) giode.Dimensions {
-	measure := gtx
-	measure.Constraints.Min = image.Point{}
-	measure.Constraints.Max.X = 1 << 20
+// at returns the formula typeset at size sp, made once per size.
+func (v *FormulaView) at(size int) *formula.Formula {
+	f, ok := v.sizes[size]
+	if !ok {
+		f = formula.New(v.src, giode.Styles{FontSize: theme.FontSize(size), Color: theme.Text})
+		v.sizes[size] = f
+	}
+	return f
+}
+
+// measure lays f out unconstrained into a macro and returns it.
+func measure(gtx giode.Context, f *formula.Formula) (op.CallOp, giode.Dimensions) {
+	free := gtx
+	free.Constraints.Min = image.Point{}
+	free.Constraints.Max.X = 1 << 20
 	macro := op.Record(gtx.Ops)
-	dims := v.formula.Layout(measure)
-	call := macro.Stop()
+	dims := f.Layout(free)
+	return macro.Stop(), dims
+}
+
+// Layout sets the formula at the largest size that fits, then places it.
+func (v *FormulaView) Layout(gtx giode.Context) giode.Dimensions {
 	width := gtx.Constraints.Max.X
+	call, dims := measure(gtx, v.at(v.size))
 	if dims.Size.X > width {
-		return v.scroll.Layout(gtx)
+		scaled := int(float32(v.size) * float32(width) / float32(dims.Size.X))
+		v.fitted = v.at(max(scaled, int(float32(v.size)*minScale)))
+		call, dims = measure(gtx, v.fitted)
+		if dims.Size.X > width {
+			return v.scroll.Layout(gtx)
+		}
 	}
 	x := 0
 	if v.centered {

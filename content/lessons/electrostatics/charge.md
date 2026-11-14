@@ -20,8 +20,8 @@ When you rub glass with silk, the glass becomes positive and the silk becomes ne
 
 Today we know what moves. Ordinary matter is made of atoms, each with a positive nucleus (protons, charge +e each) surrounded by electrons (charge −e each). A neutral atom has equal numbers of both. Rubbing transfers a tiny fraction of electrons from one surface to the other.
 
-::: model atom
-Protons in the nucleus carry +e and electrons carry −e; a neutral atom has as many of one as the other. The electrons do not really follow neat orbits, as later lessons explain.
+::: model orbital
+Hydrogen: one proton (+e) at the centre and one electron (−e) spread over a cloud of possible places. Equal and opposite charges make the atom neutral.
 :::
 
 ## Conductors and insulators

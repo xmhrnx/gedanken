@@ -27,6 +27,10 @@ A p orbital (l = 1) has two lobes on opposite sides of the nucleus, with zero pr
 
 The pattern of empty surfaces, called **nodes**, follows from the quantum numbers just as the nodes of the particle in a box did. An orbital has n − 1 nodes in total: l of them are planes or cones through the nucleus, and the remaining n − l − 1 are spheres around it.
 
+::: model orbital
+Real hydrogen orbitals, each dot sampled from |ψ|². Pick 2s and 3p to see the spherical and planar nodes; colour shows the sign of ψ.
+:::
+
 ::: model wavefunction
 A one-dimensional cousin of an orbital. Level n has n − 1 nodes, places where the electron is never found. In an atom, nodes become spheres and planes.
 :::

@@ -7,8 +7,9 @@ import (
 	"github.com/xmhrnx/giode"
 )
 
-// Atom is the animated atom on the home screen: a nucleus with three
-// electrons on tilted orbits.
+// Atom is the historical planetary picture of the atom: a nucleus with
+// electrons on orbits, as Rutherford imagined it in 1911. It is labelled
+// as such; OrbitalCloud shows the quantum-mechanical picture.
 type Atom struct {
 	start  time.Time
 	height int
@@ -57,6 +58,7 @@ func (a *Atom) draw(p *giode.Painter) {
 		p.Circle(x, y, 9, "#1d2d55")
 		p.Circle(x, y, 5, "#6ee7f0")
 	}
+	label(p, p.Width()/2, p.Height()-8, "Rutherford's 1911 model · not to scale", giode.TextAnchorBottom, "#8d96ab")
 	keepAnimating(p)
 }
 

@@ -9,27 +9,26 @@ import (
 	"gedanken/internal/progress"
 	"gedanken/ui/components"
 	"gedanken/ui/models"
-	"gedanken/ui/theme"
 )
 
 // Home lists every part and chapter of the course.
 type Home struct {
 	course  *curriculum.Course
 	tracker *progress.Tracker
-	atom    giode.Element
+	orbital giode.Element
 	cards   [][]*components.ChapterCard
 	scroll  *scroll.Scroll
 }
 
-// NewHome creates the home screen; onOpen opens a chapter of a part.
-func NewHome(course *curriculum.Course, tracker *progress.Tracker, onOpen func(part int, ch curriculum.Chapter)) *Home {
-	h := &Home{course: course, tracker: tracker, atom: models.NewAtom(200)}
+// NewHome creates the home screen; onOpen opens chapter seed of a part.
+func NewHome(course *curriculum.Course, tracker *progress.Tracker, onOpen func(part, seed int, ch curriculum.Chapter)) *Home {
+	h := &Home{course: course, tracker: tracker, orbital: models.NewOrbitalCloud(300, false)}
 	for pi, part := range course.Parts {
 		var row []*components.ChapterCard
-		for _, ch := range part.Chapters {
-			row = append(row, components.NewChapterCard(ch, theme.PartColor(pi),
+		for ci, ch := range part.Chapters {
+			row = append(row, components.NewChapterCard(ch, pi, ci,
 				func() int { return tracker.ChapterDone(ch) },
-				func() { onOpen(pi, ch) }))
+				func() { onOpen(pi, ci, ch) }))
 		}
 		h.cards = append(h.cards, row)
 	}
@@ -43,19 +42,21 @@ func (h *Home) Layout(gtx giode.Context) giode.Dimensions {
 }
 
 func (h *Home) content() giode.Element {
-	written, total := 0, 0
+	total := 0
 	for _, p := range h.course.Parts {
 		for _, ch := range p.Chapters {
-			written += ch.WrittenCount()
 			total += len(ch.Lessons)
 		}
 	}
-	kids := []giode.Element{components.HomeHero(h.atom, h.tracker.Total(), written, total)}
+	var kids []giode.Element
 	for pi, part := range h.course.Parts {
-		kids = append(kids, components.PartHeader(pi, part.Title))
+		kids = append(kids, components.PartHeader(pi, part.Title, len(part.Chapters)))
 		for _, card := range h.cards[pi] {
 			kids = append(kids, card)
 		}
 	}
-	return components.PageColumn(kids...)
+	return giode.Stack(giode.Styles{Width: -1},
+		components.HomeHero(h.orbital, h.tracker.Total(), total),
+		components.PageColumn(kids...),
+	)
 }

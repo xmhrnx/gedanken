@@ -16,22 +16,12 @@ import (
 // progressKey is where finished lessons are saved.
 const progressKey = "progress"
 
-// Route paths.
-const (
-	routeHome    = "/"
-	routeChapter = "/chapter"
-	routeLesson  = "/lesson"
-)
-
 // App owns the course, the reader's progress and the open screens.
 type App struct {
 	content fs.FS
 	course  *curriculum.Course
 	tracker *progress.Tracker
-	router  *giode.Router
-	home    *screens.Home
-	chapter *screens.ChapterScreen
-	lesson  *screens.LessonScreen
+	nav     *Navigator
 	part    int
 	current curriculum.Chapter
 }
@@ -41,34 +31,31 @@ func NewApp(content fs.FS, course *curriculum.Course) *App {
 	saved := settings.Value(progressKey, map[string]bool{})
 	tracker := progress.New(saved, func(done map[string]bool) error { return settings.Save(progressKey, done) })
 	a := &App{content: content, course: course, tracker: tracker}
-	a.home = screens.NewHome(course, a.tracker, a.openChapter)
-	a.router = giode.NewRouter(
-		giode.Route{Path: routeHome, View: func() giode.Element { return a.home }},
-		giode.Route{Path: routeChapter, View: func() giode.Element { return a.chapter }},
-		giode.Route{Path: routeLesson, View: func() giode.Element { return a.lesson }},
-	)
+	a.nav = NewNavigator(screens.NewHome(course, a.tracker, a.openChapter))
 	return a
 }
 
 // View is the root element, built every frame.
 func (a *App) View() giode.Element {
-	return giode.Box(giode.Styles{Width: -1, Height: -1, Background: theme.Background}, a.router)
+	return giode.Box(giode.Styles{Width: -1, Height: -1, Background: theme.Background}, a.nav)
 }
 
-func (a *App) openChapter(part int, ch curriculum.Chapter) {
+func (a *App) openChapter(part, seed int, ch curriculum.Chapter) {
 	a.part, a.current = part, ch
-	a.chapter = screens.NewChapterScreen(part, ch, a.tracker, a.back, a.openLesson)
-	a.router.Push(routeChapter)
+	a.nav.Push(screens.NewChapterScreen(part, seed, ch, a.tracker, a.back, a.openLesson))
 }
 
 func (a *App) openLesson(i int) {
-	a.lesson = screens.NewLessonScreen(a.content, a.part, a.current, i, a.tracker, a.back, a.nextLesson)
-	a.router.Push(routeLesson)
+	a.nav.Push(a.newLesson(i))
 }
 
 // nextLesson replaces the open lesson, so Back still leads to the chapter.
 func (a *App) nextLesson(i int) {
-	a.lesson = screens.NewLessonScreen(a.content, a.part, a.current, i, a.tracker, a.back, a.nextLesson)
+	a.nav.Replace(a.newLesson(i))
 }
 
-func (a *App) back() { a.router.Back() }
+func (a *App) newLesson(i int) *screens.LessonScreen {
+	return screens.NewLessonScreen(a.content, a.part, a.current, i, a.tracker, a.back, a.nextLesson)
+}
+
+func (a *App) back() { a.nav.Pop() }

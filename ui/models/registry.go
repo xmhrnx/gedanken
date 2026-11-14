@@ -25,6 +25,7 @@ var constructors = map[string]func() giode.Element{
 	"bohr":           func() giode.Element { return NewBohr() },
 	"wavefunction":   func() giode.Element { return NewWavefunction() },
 	"decay":          func() giode.Element { return NewDecay() },
+	"orbital":        func() giode.Element { return NewOrbitalCloud(260, true) },
 }
 
 // New creates the model with the given id.
