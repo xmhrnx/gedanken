@@ -108,7 +108,8 @@ func (m *OrbitalCloud) draw(p *giode.Painter) {
 		near := (pt.Z*st + depth*ct) / m.reach[i]
 		level := (0.55 + 0.45*math.Max(-1, math.Min(1, near))) * fade
 		shade := m.shades[pt.Positive][int(level*(cloudShades-1))]
-		p.Circle(cx+float32(x*scale), cy-float32(y*scale), 1.7, shade)
+		// A 1.7 dp square reads as a dot and is far cheaper than a circle.
+		p.Rect(cx+float32(x*scale)-0.85, cy-float32(y*scale)-0.85, 1.7, 1.7, 0, shade)
 	}
 	p.Circle(cx, cy, 2.2, "#ffffff")
 	o := physics.Orbitals[i]

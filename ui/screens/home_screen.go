@@ -2,8 +2,9 @@
 package screens
 
 import (
+	"fmt"
+
 	"github.com/xmhrnx/giode"
-	"github.com/xmhrnx/giode/components/scroll"
 
 	"gedanken/internal/curriculum"
 	"gedanken/internal/progress"
@@ -11,52 +12,70 @@ import (
 	"gedanken/ui/models"
 )
 
-// Home lists every part and chapter of the course.
+// homeRow is one row of the home list: the hero, a part header or a
+// chapter card.
+type homeRow struct {
+	key     string
+	build   func() giode.Element
+	version func() any
+}
+
+// Home lists every part and chapter of the course. It is a lazy list:
+// only rows near the screen are built, and a row is redrawn only when
+// its version changes, so the animated hero is the only row rebuilt
+// every frame.
 type Home struct {
-	course  *curriculum.Course
-	tracker *progress.Tracker
-	orbital giode.Element
-	cards   [][]*components.ChapterCard
-	scroll  *scroll.Scroll
+	rows []homeRow
+	list *giode.LazyListElement
 }
 
 // NewHome creates the home screen; onOpen opens chapter seed of a part.
 func NewHome(course *curriculum.Course, tracker *progress.Tracker, onOpen func(part, seed int, ch curriculum.Chapter)) *Home {
-	h := &Home{course: course, tracker: tracker, orbital: models.NewOrbitalCloud(300, false)}
+	h := &Home{}
+	orbital := models.NewOrbitalCloud(300, false)
+	total := lessonCount(course)
+	h.rows = append(h.rows, homeRow{key: "hero",
+		build:   func() giode.Element { return components.HomeHero(orbital, tracker.Total(), total) },
+		version: func() any { return tracker.Total() }})
 	for pi, part := range course.Parts {
-		var row []*components.ChapterCard
+		header := components.ColumnRow(components.PartHeader(pi, part.Title, len(part.Chapters)), 16)
+		h.rows = append(h.rows, homeRow{key: fmt.Sprintf("part-%d", pi),
+			build:   func() giode.Element { return header },
+			version: func() any { return 0 }})
 		for ci, ch := range part.Chapters {
-			row = append(row, components.NewChapterCard(ch, pi, ci,
+			card := components.NewChapterCard(ch, pi, ci,
 				func() int { return tracker.ChapterDone(ch) },
-				func() { onOpen(pi, ci, ch) }))
+				func() { onOpen(pi, ci, ch) })
+			row := components.ColumnRow(card, 18)
+			h.rows = append(h.rows, homeRow{key: "chapter-" + ch.ID,
+				build:   func() giode.Element { return row },
+				version: func() any { return tracker.ChapterDone(ch) }})
 		}
-		h.cards = append(h.cards, row)
 	}
-	h.scroll = giode.Scroll(h.content, giode.Styles{ScrollBar: giode.ScrollBar{HiddenMaxWidth: 600}})
+	end := giode.Box(giode.Styles{Height: 24})
+	h.rows = append(h.rows, homeRow{key: "end", build: func() giode.Element { return end },
+		version: func() any { return 0 }})
+	h.list = giode.LazyList(
+		func() int { return len(h.rows) },
+		func(i int) any { return h.rows[i].key },
+		func(i int) giode.Element { return h.rows[i].build() },
+		giode.Styles{ScrollBar: giode.ScrollBar{HiddenMaxWidth: 600}},
+	).Version(func(i int) any { return h.rows[i].version() })
 	return h
+}
+
+// lessonCount totals the lessons in the course.
+func lessonCount(course *curriculum.Course) int {
+	n := 0
+	for _, p := range course.Parts {
+		for _, ch := range p.Chapters {
+			n += len(ch.Lessons)
+		}
+	}
+	return n
 }
 
 // Layout draws the screen.
 func (h *Home) Layout(gtx giode.Context) giode.Dimensions {
-	return giode.Box(giode.Styles{Width: -1, Height: -1}, h.scroll).Layout(gtx)
-}
-
-func (h *Home) content() giode.Element {
-	total := 0
-	for _, p := range h.course.Parts {
-		for _, ch := range p.Chapters {
-			total += len(ch.Lessons)
-		}
-	}
-	var kids []giode.Element
-	for pi, part := range h.course.Parts {
-		kids = append(kids, components.PartHeader(pi, part.Title, len(part.Chapters)))
-		for _, card := range h.cards[pi] {
-			kids = append(kids, card)
-		}
-	}
-	return giode.Stack(giode.Styles{Width: -1},
-		components.HomeHero(h.orbital, h.tracker.Total(), total),
-		components.PageColumn(kids...),
-	)
+	return giode.Box(giode.Styles{Width: -1, Height: -1}, h.list).Layout(gtx)
 }
