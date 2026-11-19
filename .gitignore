@@ -2,3 +2,4 @@ dist/
 /gedanken
 *.apk
 *.aab
+release.keystore

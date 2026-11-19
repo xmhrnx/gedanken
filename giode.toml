@@ -1,12 +1,17 @@
+# giode.toml configures how the giode CLI builds Gedanken.
+# Reference: https://github.com/xmhrnx/giode-cli#giodetoml
+
 [app]
 name = "Gedanken"
-id = "com.gedanken.physics"
+id = "com.gedanken.physics"   # Android package name and iOS bundle ID: Play Console and App Store Connect
 version = "0.1.0"
-build = 1
+build = 1                     # CI sets the build number from the run number
+# Phones only: the lessons, models and layout are made for a phone screen.
 platforms = ["android", "ios"]
 description = "Physics from motion to black holes, with the math and the history."
-website = "https://xmhrnx.github.io/gedanken/"
+website = "https://xmhrnx.github.io/gedanken/"   # privacy policy: #privacy on this page
 # iOS home-screen icon (and Android 7 and earlier). Made by tools/make_icon.py.
+# Opaque and full-bleed, as the App Store requires: iOS rounds the corners.
 icon = "assets/icon.png"
 # Launch background on both platforms: the icon's outer colour and the
 # app's page colour, so launch, splash and first frame read as one.
@@ -14,6 +19,8 @@ splash_color = "#0a0d16"
 
 [android]
 min_sdk = 24
+# Fully offline: no network or other permissions. The manifest gets none
+# (check with giode manifest android).
 # The app sends no notifications, so it asks for no notification permission.
 notifications = false
 # Adaptive icon layers (Android 8+); Android 12+ shows them on the splash.
@@ -21,3 +28,33 @@ icon_foreground = "assets/android-foreground.png"
 icon_background = "assets/android-background.png"
 # Themed icons (Android 13+).
 icon_monochrome = "assets/android-monochrome.png"
+# The upload key for Google Play. CI writes it from ANDROID_KEYSTORE_BASE64
+# and signs with GIODE_KEYSTORE_PASS; never commit it (see RELEASING.md).
+keystore = "release.keystore"
+
+[ios]
+min_os = 15
+icon = "assets/icon.png"      # opaque and full-bleed: iOS rounds the corners itself
+# No [ios.usage]: the app uses no camera, photos, location, network or
+# other protected resource, so iOS never asks for a permission.
+
+[ios.plist]
+ITSAppUsesNonExemptEncryption = false  # no encryption at all (no network): no export documentation
+
+[privacy]                     # PrivacyInfo.xcprivacy for the App Store
+tracking = false
+# No [[privacy.collected]]: nothing leaves the device. Finished lessons are
+# kept in a settings file in the app's own data folder (giode/settings;
+# giode declares the file timestamp API that needs).
+
+# GitHub Actions (giode ci writes .github/workflows/release.yml from this;
+# rerun `giode ci -f` after changing it). Builds only when a GitHub release
+# is published, and attaches the AAB, APK and IPA to that release.
+# After regenerating, redo two edits in release.yml by hand: pin
+# `go install github.com/xmhrnx/giode-cli/cmd/giode@v0.1.35-alpha.1`
+# (instead of @latest) and use `go-version-file: go.mod` (instead of
+# `go-version: stable`).
+[ci]
+trigger = "release"
+test = "go vet ./... && go test ./..."
+dispatch = false
