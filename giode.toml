@@ -19,6 +19,9 @@ splash_color = "#0a0d16"
 
 [android]
 min_sdk = 24
+# Google Play requires Android 16 (API 36) for new apps and updates since
+# 31 Aug 2026; the CLI's default is 35.
+target_sdk = 36
 # Fully offline: no network or other permissions. The manifest gets none
 # (check with giode manifest android).
 # The app sends no notifications, so it asks for no notification permission.

@@ -66,9 +66,10 @@ instead of an `.ipa`).
    so every release gets a new one.
 
 **Target API level.** Google Play raises the required `targetSdkVersion` every
-August. Giode targets API 35 by default. If Play Console rejects the upload for
-its target API level, set `target_sdk` under `[android]` in `giode.toml` to the
-level it asks for and test the app on that Android version before releasing.
+August; since 31 Aug 2026 it is Android 16 (API 36). `giode.toml` sets
+`target_sdk = 36` (Giode's default is 35). When Play raises it again, bump
+`target_sdk` to the level it asks for and test the app on that Android version
+before releasing.
 
 ## App Store (iOS)
 
