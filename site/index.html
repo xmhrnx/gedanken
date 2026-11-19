@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gedanken · Physics from first principles</title>
+<meta name="description" content="Gedanken is a physics course for Android and iOS: 126 lessons from motion to black holes, with the mathematics, the derivations and the history.">
+<meta name="theme-color" content="#0a0d16">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0d16;
+    --surface: #131a2a;
+    --raised: #182033;
+    --text: #e8ecf6;
+    --muted: #8d96ab;
+    --border: #25304a;
+    --primary: #8ea8ff;
+    --teal: #5eead4;
+    --amber: #f6bd6e;
+    --orange: #fb9a5b;
+    --serif: "STIX Two Text", "Iowan Old Style", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font: 500 12px/1 var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 14px;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -.01em; }
+  .lede { font: italic 400 clamp(19px, 2.2vw, 23px)/1.5 var(--serif); color: var(--muted); }
+
+  /* Top bar */
+  nav.top {
+    position: absolute; inset: 0 0 auto 0; z-index: 3;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  nav.top .brand { display: flex; gap: 10px; align-items: center; color: var(--text); text-decoration: none; font: 600 18px var(--serif); }
+  nav.top .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  nav.top .links { display: flex; gap: 22px; font-size: 15px; }
+  nav.top .links a { color: var(--muted); text-decoration: none; }
+  nav.top .links a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: min(92vh, 860px);
+    display: grid; place-items: center;
+    padding: 110px 0 80px;
+    background:
+      radial-gradient(ellipse 60% 55% at 50% 42%, #1a2340 0%, transparent 70%),
+      linear-gradient(#0d1120, var(--bg));
+    border-bottom: 1px solid var(--border);
+  }
+  #cloud { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .9; }
+  .hero .inner { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 760px; }
+  .hero .icon {
+    width: 116px; height: 116px; border-radius: 27px; margin: 0 auto 30px;
+    box-shadow: 0 0 0 1px #2a3656, 0 24px 60px -12px #000, 0 0 80px -10px #3b4c8a;
+  }
+  .hero h1 { font-size: clamp(56px, 11vw, 112px); letter-spacing: -.02em; line-height: 1; }
+  .hero .lede { margin: 18px auto 30px; max-width: 34ch; color: #a9b1c6; }
+  .chip {
+    display: inline-block; font: 13px var(--mono); color: var(--amber);
+    border: 1px solid #3a3424; background: #151520cc; border-radius: 999px; padding: 6px 16px;
+  }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none;
+  }
+  .btn.primary { background: var(--primary); color: var(--bg); }
+  .btn.primary:hover { background: #a9bdff; }
+  .btn.ghost { color: var(--text); border: 1px solid var(--border); background: #131a2acc; }
+  .btn.ghost:hover { border-color: var(--primary); }
+  .caption-mini { position: absolute; z-index: 2; bottom: 18px; left: 0; right: 0; text-align: center; font: 12px var(--mono); color: #5d6782; }
+
+  section { padding: 96px 0; }
+  section + section { border-top: 1px solid #161d2e; }
+
+  /* Gedankenexperiment intro */
+  .intro { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+  .intro p { margin: 0 0 16px; color: #c7cede; }
+  .gloss { font: italic 21px/1.5 var(--serif); color: var(--muted); border-left: 2px solid var(--amber); padding-left: 18px; margin-top: 22px; }
+  .gloss b { font-style: normal; color: var(--amber); font-weight: 600; }
+
+  /* Anatomy of a lesson */
+  .blocks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+  .block {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 22px 24px;
+  }
+  .block .tag { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+  .block h3 { font-size: 22px; margin: 12px 0 8px; }
+  .block p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
+  .block .eq { font: italic 20px var(--serif); color: var(--text); margin: 14px 0 0; }
+
+  /* Screens */
+  .screens-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+  .screens-head p { max-width: 46ch; margin: 0; color: var(--muted); }
+  .rail {
+    display: flex; gap: 22px; margin-top: 44px; overflow-x: auto; padding: 8px 4px 22px;
+    scroll-snap-type: x mandatory; scrollbar-color: var(--border) transparent;
+  }
+  figure.phone { margin: 0; flex: 1 0 180px; max-width: 236px; scroll-snap-align: start; }
+  figure.phone .frame {
+    border-radius: 30px; padding: 7px; background: linear-gradient(160deg, #2a3452, #121828);
+    box-shadow: 0 30px 60px -24px #000, 0 0 0 1px #2c3754;
+  }
+  figure.phone img { border-radius: 24px; width: 100%; height: auto; }
+  figure.phone figcaption { font-size: 14px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+  figure.phone figcaption b { color: var(--text); font-weight: 600; display: block; }
+
+  /* Curriculum */
+  .parts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 48px; }
+  .part { display: grid; grid-template-columns: 64px 1fr; gap: 14px; padding: 22px 0; border-top: 1px solid var(--border); }
+  .part .num { font: 400 44px/1 var(--serif); color: var(--c); }
+  .part h3 { font-size: 23px; }
+  .part .count { font: 500 11px/1 var(--mono); letter-spacing: .12em; color: var(--c); text-transform: uppercase; margin: 2px 0 8px; }
+  .part ul { list-style: none; margin: 0; padding: 0; color: #b7bfd2; font-size: 15.5px; }
+  .part li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed #1f2840; padding: 4px 0; }
+  .part li span:last-child { font: 13px var(--mono); color: var(--muted); }
+  .totals { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+  .totals div { font: 13px var(--mono); color: var(--muted); }
+  .totals b { display: block; font: 600 40px/1.1 var(--serif); color: var(--text); }
+
+  /* Models */
+  .models { columns: 2; column-gap: 48px; margin-top: 40px; }
+  .model { break-inside: avoid; display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #1a2236; }
+  .model code { flex: 0 0 132px; font: 13px/1.9 var(--mono); color: var(--teal); }
+  .model span { color: #c7cede; font-size: 15.5px; }
+
+  /* Download */
+  .download {
+    text-align: center;
+    background: radial-gradient(ellipse 50% 70% at 50% 100%, #1b2442, transparent 70%);
+  }
+  .download .lede { max-width: 40ch; margin: 18px auto 0; }
+  .platforms { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 40px 0 26px; }
+  .platform {
+    min-width: 220px; padding: 22px 26px; text-align: left; border-radius: 16px;
+    background: var(--surface); border: 1px solid var(--border); text-decoration: none; color: var(--text);
+    transition: border-color .15s, transform .15s;
+  }
+  .platform:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .platform b { display: block; font: 600 22px var(--serif); }
+  .platform span { font-size: 14px; color: var(--muted); }
+  .small { font-size: 14.5px; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--border); padding: 34px 0 44px; color: var(--muted); font-size: 14.5px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
+  footer .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font: 600 17px var(--serif); }
+  footer img { width: 26px; height: 26px; border-radius: 7px; }
+
+  @media (max-width: 860px) {
+    .intro { grid-template-columns: 1fr; gap: 24px; }
+    .blocks { grid-template-columns: 1fr 1fr; }
+    .parts { grid-template-columns: 1fr; }
+    .models { columns: 1; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 18px; }
+    nav.top { padding: 16px 18px; }
+    nav.top .links a.hide-sm { display: none; }
+    section { padding: 68px 0; }
+    .blocks { grid-template-columns: 1fr; }
+    .hero .icon { width: 92px; height: 92px; border-radius: 22px; }
+    figure.phone { flex: 0 0 210px; }
+    .model code { flex-basis: 112px; }
+    .platform { min-width: 0; width: 100%; }
+    .totals { gap: 26px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="brand" href="#"><img src="img/icon.png" alt="">Gedanken</a>
+  <div class="links">
+    <a class="hide-sm" href="#course">Course</a>
+    <a class="hide-sm" href="#models">Models</a>
+    <a href="#download">Download</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="cloud" aria-hidden="true"></canvas>
+  <div class="inner">
+    <img class="icon" src="img/icon.png" alt="Gedanken app icon: hydrogen's 2p orbital as a cloud of dots">
+    <h1>Gedanken</h1>
+    <p class="lede">Physics from first principles, with the mathematics and the history.</p>
+    <span class="chip">126 lessons · from motion to black holes</span>
+    <div class="cta">
+      <a class="btn primary" href="#download">Get the app</a>
+      <a class="btn ghost" href="https://github.com/xmhrnx/gedanken">Source on GitHub</a>
+    </div>
+  </div>
+  <div class="caption-mini">hydrogen · 2p orbital · each dot a place the electron may be found</div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap intro">
+      <div>
+        <p class="eyebrow">What it is</p>
+        <h2>A physics course that shows its working.</h2>
+        <p class="gloss"><b>Gedanken</b>, German for “thoughts”, as in the <i>Gedankenexperiment</i>: the thought experiments that physics was built on.</p>
+      </div>
+      <div>
+        <p>Gedanken is a course in physics for your phone, written for an intelligent adult who wants to understand how physicists reached each idea: not a specialist, not a child. Every lesson sets up the problem before solving it, explains the reasoning rather than only the result, and tells the history as a story of who was stuck on what.</p>
+        <p>The equations are real, typeset mathematics, and the derivations unfold one step at a time, each with a paragraph saying what just happened. Interactive models let you push on the ideas, and a short quiz at the end of a lesson lets you check yourself, or skip it.</p>
+        <p>Finished lessons are remembered on the device, so the home screen shows how far you have come.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Inside a lesson</p>
+      <h2>Six kinds of block, one careful voice.</h2>
+      <div class="blocks">
+        <div class="block">
+          <span class="tag" style="color:var(--primary)">Prose</span>
+          <h3>Connected argument</h3>
+          <p>Paragraphs that lead into each other, with every technical term defined the first time it appears.</p>
+        </div>
+        <div class="block">
+          <span class="tag" style="color:var(--teal)">Equation</span>
+          <h3>Typeset mathematics</h3>
+          <p>Displayed formulas written in LaTeX and drawn in STIX Two Math, with a caption saying what they are.</p>
+          <p class="eq">v = √(2GM / r)</p>
+        </div>
+        <div class="block">
+          <span class="tag" style="color:#c49bff">Derivation</span>
+          <h3>Step by step</h3>
+          <p>Each step is an equation and an explanation. Reveal them with <i>Next step</i>, or show them all at once.</p>
+        </div>
+        <div class="block">
+          <span class="tag" style="color:var(--amber)">History</span>
+          <h3>Who, where, why</h3>
+          <p>Asides tagged with a year and a place: 1783 in Thornhill, 1935 at the Royal Astronomical Society.</p>
+        </div>
+        <div class="block">
+          <span class="tag" style="color:var(--orange)">Interactive</span>
+          <h3>Models to play with</h3>
+          <p>Sliders and live graphics: shrink a star until light can’t leave, or set k and watch a chain reaction grow.</p>
+        </div>
+        <div class="block">
+          <span class="tag" style="color:#5ee39a">Check yourself</span>
+          <h3>Quizzes and key ideas</h3>
+          <p>Multiple-choice questions with an explanation for the answer, and highlighted notes for the idea to keep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="screens-head">
+        <div>
+          <p class="eyebrow">Screens</p>
+          <h2>Deep space, set in a book face.</h2>
+        </div>
+        <p>A dark, night-blue reading screen; titles and reading text in STIX Two Text, each part of the course in its own colour.</p>
+      </div>
+      <div class="rail">
+        <figure class="phone">
+          <div class="frame"><img src="img/screen-home.png" alt="Home screen with an animated hydrogen orbital, the title and progress" loading="lazy" width="400" height="840"></div>
+          <figcaption><b>Home</b>A live orbital cloud, your progress, and the course in parts.</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="img/screen-chapter.png" alt="Black Holes chapter with its lesson list" loading="lazy" width="400" height="840"></div>
+          <figcaption><b>Chapter</b>Black Holes: six lessons, from dark stars to seeing the invisible.</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="img/screen-lesson.png" alt="The opening of the lesson Schwarzschild's Solution" loading="lazy" width="400" height="840"></div>
+          <figcaption><b>Lesson</b>Schwarzschild's Solution opens with the question he asked.</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="img/screen-deriv.png" alt="A two-step derivation of the form of a static, spherical metric" loading="lazy" width="400" height="840"></div>
+          <figcaption><b>Derivation</b>The form of a static, spherical metric, one step at a time.</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="img/screen-model.png" alt="Interactive model: a star shrinking while its escape velocity rises" loading="lazy" width="400" height="840"></div>
+          <figcaption><b>Model</b>Shrink the star; at the critical radius its light can no longer leave.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="course">
+    <div class="wrap">
+      <p class="eyebrow">The course</p>
+      <h2>Eight parts, from units to the Big Bang.</h2>
+      <div class="totals">
+        <div><b>8</b>parts</div>
+        <div><b>24</b>chapters</div>
+        <div><b>126</b>lessons</div>
+        <div><b>22</b>interactive models</div>
+      </div>
+      <div class="parts">
+        <div class="part" style="--c:#8ea8ff"><div class="num">01</div><div><h3>Foundations</h3><p class="count">5 lessons</p><ul>
+          <li><span>The Language of Physics</span><span>5</span></li></ul></div></div>
+        <div class="part" style="--c:#5eead4"><div class="num">02</div><div><h3>Classical Mechanics</h3><p class="count">29 lessons</p><ul>
+          <li><span>Motion</span><span>5</span></li><li><span>Forces</span><span>6</span></li><li><span>Energy and Momentum</span><span>6</span></li><li><span>Gravity</span><span>6</span></li><li><span>Oscillations and Waves</span><span>6</span></li></ul></div></div>
+        <div class="part" style="--c:#fb9a5b"><div class="num">03</div><div><h3>Matter and Heat</h3><p class="count">9 lessons</p><ul>
+          <li><span>Fluids</span><span>3</span></li><li><span>Thermodynamics</span><span>6</span></li></ul></div></div>
+        <div class="part" style="--c:#f6d365"><div class="num">04</div><div><h3>Electricity and Magnetism</h3><p class="count">22 lessons</p><ul>
+          <li><span>Electric Charge and Fields</span><span>5</span></li><li><span>Circuits</span><span>4</span></li><li><span>Magnetism</span><span>5</span></li><li><span>Maxwell and Light</span><span>4</span></li><li><span>Optics</span><span>4</span></li></ul></div></div>
+        <div class="part" style="--c:#c49bff"><div class="num">05</div><div><h3>Relativity</h3><p class="count">17 lessons</p><ul>
+          <li><span>Special Relativity</span><span>6</span></li><li><span>General Relativity</span><span>5</span></li><li><span>Black Holes</span><span>6</span></li></ul></div></div>
+        <div class="part" style="--c:#f48fc4"><div class="num">06</div><div><h3>Quantum Physics</h3><p class="count">11 lessons</p><ul>
+          <li><span>The Birth of Quantum Theory</span><span>4</span></li><li><span>Quantum Mechanics</span><span>7</span></li></ul></div></div>
+        <div class="part" style="--c:#f58a8a"><div class="num">07</div><div><h3>Atoms and Nuclei</h3><p class="count">23 lessons</p><ul>
+          <li><span>The Atom</span><span>6</span></li><li><span>The Nucleus</span><span>5</span></li><li><span>Fission and the Atomic Bomb</span><span>8</span></li><li><span>Fusion</span><span>4</span></li></ul></div></div>
+        <div class="part" style="--c:#6cb8ff"><div class="num">08</div><div><h3>Particles and Cosmos</h3><p class="count">10 lessons</p><ul>
+          <li><span>Particle Physics</span><span>5</span></li><li><span>Cosmology</span><span>5</span></li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="models">
+    <div class="wrap">
+      <p class="eyebrow">Interactive models</p>
+      <h2>Ideas you can push on.</h2>
+      <p class="lede" style="margin-top:14px;max-width:44ch">Twenty-two live graphics, drawn by the app itself, placed in the lessons where they help.</p>
+      <div class="models">
+        <div class="model"><code>slope</code><span>The tangent to a curve at a point you drag</span></div>
+        <div class="model"><code>area</code><span>Rectangles approximating the area under a curve</span></div>
+        <div class="model"><code>projectile</code><span>Launch angle and speed, and the trajectory they give</span></div>
+        <div class="model"><code>falling</code><span>A dropped ball, marked every 0.1 s</span></div>
+        <div class="model"><code>orbit</code><span>Newton’s cannon: falls back, circles, ellipses, escapes</span></div>
+        <div class="model"><code>pendulum</code><span>A swinging pendulum; change its length, see its period</span></div>
+        <div class="model"><code>wave</code><span>A travelling wave with wavelength and frequency sliders</span></div>
+        <div class="model"><code>interference</code><span>Two sources or slits, and their bright and dark fringes</span></div>
+        <div class="model"><code>gas</code><span>Molecules in a box; raise the temperature, watch the pressure</span></div>
+        <div class="model"><code>field-lines</code><span>The electric field of two charges</span></div>
+        <div class="model"><code>light-clock</code><span>A moving light clock and its time dilation factor γ</span></div>
+        <div class="model"><code>escape</code><span>A star shrinking until its escape velocity passes c</span></div>
+        <div class="model"><code>gravity-well</code><span>Curved space around a black hole, and a probe’s clock rate</span></div>
+        <div class="model"><code>light-cones</code><span>Light cones tipping over near a horizon</span></div>
+        <div class="model"><code>bohr</code><span>Hydrogen’s energy levels: pick a jump, see the photon’s colour</span></div>
+        <div class="model"><code>wavefunction</code><span>A particle in a box: ψ and |ψ|² for each level n</span></div>
+        <div class="model"><code>orbital</code><span>Hydrogen orbitals from 1s to 3d as probability clouds</span></div>
+        <div class="model"><code>atom</code><span>Rutherford’s 1911 planetary picture, labelled as historical</span></div>
+        <div class="model"><code>decay</code><span>Radioactive nuclei, halving every half-life</span></div>
+        <div class="model"><code>binding-curve</code><span>Binding energy per nucleon against mass number</span></div>
+        <div class="model"><code>chain-reaction</code><span>Generations of fission for a chosen k</span></div>
+        <div class="model"><code>critical-mass</code><span>Neutrons escaping a sphere of the size you choose</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <div class="wrap">
+      <p class="eyebrow">Download</p>
+      <h2>Take it with you.</h2>
+      <p class="lede">Gedanken is built for Android and iOS. Builds are published on the project’s releases page.</p>
+      <div class="platforms">
+        <a class="platform" href="https://github.com/xmhrnx/gedanken/releases/latest"><b>Android</b><span>Android 7.0 and later</span></a>
+        <a class="platform" href="https://github.com/xmhrnx/gedanken/releases/latest"><b>iOS</b><span>iPhone</span></a>
+      </div>
+      <p class="small">Prefer to build it yourself? The <a href="https://github.com/xmhrnx/gedanken">source is on GitHub</a>: a Go app made with <a href="https://github.com/xmhrnx/giode">Giode</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><img src="img/icon.png" alt="">Gedanken</span>
+    <span>Free and open source under the <a href="https://github.com/xmhrnx/gedanken/blob/main/LICENSE">Apache License 2.0</a> · <a href="https://github.com/xmhrnx/gedanken">github.com/xmhrnx/gedanken</a></span>
+  </div>
+</footer>
+
+<script>
+// The hero backdrop: hydrogen's 2p orbital, the same cloud as the icon,
+// sampled from |psi|^2 and slowly turning. Blue and amber for the sign of psi.
+(function () {
+  const canvas = document.getElementById('cloud');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pts = [];
+  const peak = Math.pow(2 * Math.exp(-1), 2), extent = 12;
+  while (pts.length < 2600) {
+    const x = (Math.random() * 2 - 1) * extent, y = (Math.random() * 2 - 1) * extent, z = (Math.random() * 2 - 1) * extent;
+    const r = Math.hypot(x, y, z);
+    const psi = z * Math.exp(-r / 2);
+    if (r < extent && Math.random() * peak < psi * psi) pts.push([x, y, z]);
+  }
+  let w, h, dpr;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+  }
+  function draw(t) {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const a = t / 9000, tilt = -0.38;
+    const s = Math.min(w, h) / 22;
+    const cx = w / 2, cy = h * 0.44;
+    for (const [x, y, z] of pts) {
+      const xr = x * Math.cos(a) - y * Math.sin(a);
+      const yr = x * Math.sin(a) + y * Math.cos(a);
+      const px = xr * Math.cos(tilt) - z * Math.sin(tilt);
+      const pz = xr * Math.sin(tilt) + z * Math.cos(tilt);
+      const near = 0.35 + 0.45 * (yr + extent) / (2 * extent);
+      ctx.fillStyle = z >= 0 ? `rgba(142,180,255,${near * 0.75})` : `rgba(246,189,110,${near * 0.75})`;
+      ctx.fillRect(cx + px * s, cy - pz * s, 1.6, 1.6);
+    }
+    if (!still) requestAnimationFrame(draw);
+  }
+  size();
+  window.addEventListener('resize', () => { size(); if (still) draw(0); });
+  if (still) draw(0); else requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
