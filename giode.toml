@@ -5,6 +5,7 @@ version = "0.1.0"
 build = 1
 platforms = ["android", "ios"]
 description = "Physics from motion to black holes, with the math and the history."
+website = "https://xmhrnx.github.io/gedanken/"
 # iOS home-screen icon (and Android 7 and earlier). Made by tools/make_icon.py.
 icon = "assets/icon.png"
 # Launch background on both platforms: the icon's outer colour and the
