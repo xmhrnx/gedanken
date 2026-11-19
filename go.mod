@@ -5,7 +5,7 @@ go 1.26.6
 require (
 	gioui.org v0.10.2
 	github.com/go-fonts/stix v0.2.2
-	github.com/xmhrnx/giode v1.0.22-alpha.1
+	github.com/xmhrnx/giode v1.0.25-alpha.1
 )
 
 require (
