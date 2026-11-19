@@ -167,13 +167,21 @@
   .platform span { font-size: 14px; color: var(--muted); }
   .small { font-size: 14.5px; color: var(--muted); }
 
+  /* Privacy */
+  .privacy { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+  .privacy .updated { font: 13px var(--mono); color: var(--muted); margin: 18px 0 0; }
+  .privacy dl { margin: 0; }
+  .privacy dt { font: 600 21px/1.3 var(--serif); color: var(--text); margin: 0 0 6px; }
+  .privacy dd { margin: 0 0 22px; padding-bottom: 22px; border-bottom: 1px solid #1a2236; color: #c7cede; font-size: 15.5px; }
+  .privacy dd:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
   footer { border-top: 1px solid var(--border); padding: 34px 0 44px; color: var(--muted); font-size: 14.5px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
   footer .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font: 600 17px var(--serif); }
   footer img { width: 26px; height: 26px; border-radius: 7px; }
 
   @media (max-width: 860px) {
-    .intro { grid-template-columns: 1fr; gap: 24px; }
+    .intro, .privacy { grid-template-columns: 1fr; gap: 24px; }
     .blocks { grid-template-columns: 1fr 1fr; }
     .parts { grid-template-columns: 1fr; }
     .models { columns: 1; }
@@ -385,12 +393,35 @@
       <p class="small">Prefer to build it yourself? The <a href="https://github.com/xmhrnx/gedanken">source is on GitHub</a>: a Go app made with <a href="https://github.com/xmhrnx/giode">Giode</a>.</p>
     </div>
   </section>
+  <section id="privacy">
+    <div class="wrap privacy">
+      <div>
+        <p class="eyebrow">Privacy</p>
+        <h2>Nothing leaves your phone.</h2>
+        <p class="updated">Privacy policy · last updated 19 November 2026</p>
+      </div>
+      <dl>
+        <dt>What the app collects</dt>
+        <dd>Nothing. Gedanken has no accounts, no sign-in, no analytics, no advertising, no crash reporting and no tracking of any kind. It does not use the internet at all: it asks for no network permission, and every lesson, formula and model is built into the app.</dd>
+        <dt>What stays on your device</dt>
+        <dd>The list of lessons you have finished, so the home screen can show your progress. It is kept in a small settings file in the app’s own storage on your phone, is never sent to us or anyone else, and is deleted when you uninstall the app. Like other app data, it can be included in your phone’s own backups (Android backup to your Google account, or iCloud and device backups) if you have turned those on.</dd>
+        <dt>Permissions</dt>
+        <dd>None. The app does not use your camera, microphone, photos, contacts, location or notifications.</dd>
+        <dt>Children</dt>
+        <dd>Because the app collects no personal information from anyone, it collects none from children either.</dd>
+        <dt>This website</dt>
+        <dd>This page is hosted on GitHub Pages and loads its fonts from Google Fonts; both see the usual web request data, such as your IP address, under their own privacy policies. The page sets no cookies and runs no analytics.</dd>
+        <dt>Changes and contact</dt>
+        <dd>If this policy changes, the new version will be published here with a new date. Questions go to the project’s <a href="https://github.com/xmhrnx/gedanken/issues">issue tracker on GitHub</a>.</dd>
+      </dl>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <span class="brand"><img src="img/icon.png" alt="">Gedanken</span>
-    <span>Free and open source under the <a href="https://github.com/xmhrnx/gedanken/blob/main/LICENSE">Apache License 2.0</a> · <a href="https://github.com/xmhrnx/gedanken">github.com/xmhrnx/gedanken</a></span>
+    <span><a href="#privacy">Privacy</a> · Free and open source under the <a href="https://github.com/xmhrnx/gedanken/blob/main/LICENSE">Apache License 2.0</a> · <a href="https://github.com/xmhrnx/gedanken">github.com/xmhrnx/gedanken</a></span>
   </div>
 </footer>
 
