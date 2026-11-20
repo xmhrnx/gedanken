@@ -34,21 +34,33 @@ explaining it properly, with time to spare. That means:
 
 ## Structure of a lesson
 
-- About 1,200–1,800 words of prose, split by `##` subheadings that read like a sequence of
-  questions answered.
-- Open with a paragraph that says what the lesson is about and why it matters.
+A lesson is a full treatment of its topic, not a summary: about 2,500–3,500 words of prose,
+in 7–10 `##` sections that read like a sequence of questions answered. Depth comes from
+explaining more of the physics, not from repeating it.
+
+- **Opening:** a paragraph that says what the lesson is about, why it matters, and what the
+  reader will be able to explain by the end.
+- **The puzzle:** what people knew, what they expected, and what did not fit.
+- **The core idea, built up carefully:** the main argument or derivation, in full.
+- **Worked examples:** at least two, with real numbers and units, each followed by a sentence
+  on what the number means. Choose examples that show different sides of the idea.
+- **Going deeper:** at least one section that takes the idea further than an introduction
+  would: a more general form, a second derivation from a different angle, a subtlety, or the
+  condition under which it holds.
+- **Common misconceptions:** where readers often go wrong, and why the wrong picture fails.
+- **Limits:** where the idea stops working and what replaces it there.
+- **Where it shows up:** applications, in nature and technology, and how this lesson connects
+  to earlier and later ones (name them).
+- **History:** `::: history` blocks told as stories, where they explain how the idea arose.
 - Derivations go in `::: steps`. Each step has a `$ ` LaTeX line and an explanation of 2–5
   sentences: what we did, why it is allowed, and what it achieved. Never "rearrange" or
   "substitute" alone; say what is being rearranged and why.
-- Worked numbers where they make an idea concrete, with units and a sentence on what the
-  number means.
 - One `::: note` with the lesson's key idea, in two or three full sentences.
-- `::: history` blocks where the history explains how the idea arose: written as a short
-  story, not a list.
 - A `::: model` where one of the models in FORMAT.md fits, with a caption saying what to do
   and what to notice.
-- End with `::: quiz`: 2–3 questions, exactly one `+` each, each with an `=` explanation of
-  one or two full sentences. Questions test understanding, not recall of dates.
+- End with `::: quiz`: 4–5 questions, exactly one `+` each, each with an `=` explanation of
+  one or two full sentences. Questions test understanding and the ability to apply the idea
+  to a new case, not recall of dates.
 
 ## Accuracy
 

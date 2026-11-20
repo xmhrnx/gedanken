@@ -45,6 +45,11 @@ func Parse(src string) ([]Block, error) {
 			open = nil
 		case open != nil:
 			open.lines = append(open.lines, line)
+		case open == nil && strings.HasPrefix(trimmed, "## "):
+			// Each section is its own block, so long lessons can be laid
+			// out a section at a time as the reader scrolls.
+			flushProse()
+			prose = append(prose, line)
 		default:
 			prose = append(prose, line)
 		}

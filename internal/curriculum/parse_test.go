@@ -78,3 +78,13 @@ func TestParseErrors(t *testing.T) {
 		}
 	}
 }
+
+func TestProseSplitsAtSections(t *testing.T) {
+	blocks, err := Parse("Intro.\n\n## First\nOne.\n\n## Second\nTwo.")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(blocks) != 3 || blocks[1].Text != "## First\nOne." || blocks[2].Text != "## Second\nTwo." {
+		t.Errorf("got %d blocks: %+v", len(blocks), blocks)
+	}
+}
