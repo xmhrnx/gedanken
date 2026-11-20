@@ -122,8 +122,9 @@ E &= \tfrac{1}{2}mv^2 \\ &= \frac{p^2}{2m}
 - Letters are italic variables. Use `\mathrm{d}x` for an upright d, `\text{ km/s}` for units
   and words, `\,` for a thin space before a unit: `c = 3.00 \times 10^8\,\text{m/s}`.
 - Supported: `\frac \dfrac \tfrac \sqrt \sqrt[n]`, `^ _`, `\sum \int \oint \lim`, `\left( \right)`,
-  `\vec \hat \bar \dot`, `\text \mathrm \mathbf`, Greek letters, and operators such as
-  `\nabla \partial \hbar \propto \Rightarrow \approx \leq \pm \times \cdot \infty \to`.
-  Anything else is drawn as written, so `go test ./content/` checks commands and braces.
+  `\vec \hat \bar \dot`, `\text \mathrm \mathbf \mathcal`, `\underbrace{…}_{…}`, `\overbrace`,
+  `\boxed`, matrices and `cases`, Greek letters, and operators such as
+  `\nabla \partial \hbar \propto \Rightarrow \approx \leq \pm \times \cdot \infty \odot \to`.
+  `go test ./content/` checks every formula with Giode's own `formula.Check`.
 - Prose, notes, history and quizzes stay plain text: write short inline maths in Unicode
   (`v = √(2GM/r)`, `r_s`, `10²⁴`). Every symbol renders, ∇ ℏ ∝ included.

@@ -3,6 +3,8 @@ package content
 import (
 	"testing"
 
+	"github.com/xmhrnx/giode/formula"
+
 	"gedanken/internal/curriculum"
 )
 
@@ -47,8 +49,10 @@ func checkBlocks(t *testing.T, file string, blocks []curriculum.Block) {
 	}
 }
 
+// checkLatex reports formulas Giode cannot typeset as written: unknown
+// commands, missing braces or arguments, unmatched \left or \begin.
 func checkLatex(t *testing.T, file, src string) {
-	if err := curriculum.CheckLatex(src); err != nil {
-		t.Errorf("%s: %v", file, err)
+	if err := formula.Check(src); err != nil {
+		t.Errorf("%s: %v in %q", file, err, src)
 	}
 }
