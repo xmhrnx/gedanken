@@ -13,16 +13,15 @@ const (
 	ContentMax  = 720
 )
 
-// Text styles. Titles, headings and summaries are set in the serif.
-// Lesson prose stays in the sans: it is full of symbols (≈ √ → ≤) the
-// serif lacks, and Giode's fallback for missing glyphs currently draws
-// neighbouring serif text in the wrong weight.
+// Text styles. Titles, headings, summaries and lesson prose are set in
+// the serif; labels, captions and controls stay in the sans. Symbols
+// the serif lacks (≈ √ → ≤) come from STIX Two Math.
 var (
 	Hero    = giode.Styles{FontSize: 44, FontWeight: giode.FontWeightSemiBold, Color: Text, LineHeight: 50, FontFamily: Serif}
 	Display = giode.Styles{FontSize: 32, FontWeight: giode.FontWeightSemiBold, Color: Text, LineHeight: 38, FontFamily: Serif}
 	Title   = giode.Styles{FontSize: 25, FontWeight: giode.FontWeightSemiBold, Color: Text, LineHeight: 30, FontFamily: Serif}
 	Heading = giode.Styles{FontSize: 19, FontWeight: giode.FontWeightSemiBold, Color: Text, LineHeight: 24, FontFamily: Serif}
-	Body    = giode.Styles{FontSize: 16, Color: Text, LineHeight: 26}
+	Body    = giode.Styles{FontSize: 17, Color: Text, LineHeight: 27, FontFamily: Serif}
 	Lead    = giode.Styles{FontSize: 18, Color: Muted, LineHeight: 26, FontFamily: Serif, FontStyle: giode.FontStyleItalic}
 	Caption = giode.Styles{FontSize: 13, Color: Muted, LineHeight: 18}
 	Eyebrow = giode.Styles{FontSize: 12, FontWeight: giode.FontWeightSemiBold, Color: Muted,
