@@ -1,10 +1,12 @@
-Every measurement is a comparison. When you say a table is 2 metres long, you mean that a standard length, the metre, fits along it twice. Leave off the unit and "the table is 2" tells nobody anything, because they cannot know what was compared against what. This lesson is about those standards: where they came from, how physicists build every other unit out of a handful of them, and how treating units as algebra turns them into a tool for catching mistakes before they cost anything.
+Every measurement is a comparison. When you say a table is 2 metres long, you mean that a standard length, the metre, fits along it twice. Leave off the unit and "the table is 2" tells nobody anything, because they cannot know what was compared against what. This lesson is about those standards: where they came from, how physicists build every other unit out of a handful of them, and how treating units as algebra turns them into a tool for catching mistakes before they cost anything. By the end you should be able to convert any unit into any other without memorising a table, check whether a formula can possibly be right before trusting it, and even guess the shape of a law of nature from nothing more than the units of the quantities it involves.
 
 ## Why a measurement needs a unit
 
 A number on its own describes nothing physical. The same table is 2 metres, 200 centimetres or about 6.6 feet long, and all three statements are true. What stays fixed is the length itself; what changes is the yardstick chosen to express it. So a measurement always has two parts, a number and a unit, and the number only means something once the unit says what it counts.
 
 This sounds obvious, but it has a practical side. For most of history, units were local. A foot was the length of some ruler's foot, a pound differed from one market town to the next, and merchants and engineers lost time and money converting between them. Science made the problem sharper, because a result measured in one laboratory is only useful if another laboratory can check it. That requires everyone to agree on the same yardsticks, and to be able to reproduce them anywhere.
+
+There is a deeper puzzle hiding here. Physics deals with a bewildering number of quantities: length, time, speed, mass, force, energy, pressure, power, charge, voltage, and dozens more. If each needed its own standard, kept in a vault and copied by hand, the system would be hopeless. Yet these quantities are not independent of one another. Speed is defined through length and time; force is defined through mass and acceleration; energy through force and distance. So the question becomes: how few standards do you actually need, what should they be tied to so that anyone anywhere can rebuild them, and what can the relationships between units tell you about the physics itself? The answers turn out to be "very few", "the constants of nature", and "a surprising amount".
 
 ::: history 1790s · Paris
 During the French Revolution, the new government wanted measures that belonged to no king and no region. The Academy of Sciences proposed a length taken from the Earth itself: one ten-millionth of the distance from the North Pole to the equator, measured along the meridian through Paris. Two astronomers, Jean-Baptiste Delambre and Pierre Méchain, spent most of the 1790s surveying the arc from Dunkirk to Barcelona, through war and arrest, to fix that length. Méchain later found a small inconsistency in his own data and kept it secret, and it troubled him for the rest of his life. The metre they produced was slightly short of the intended fraction, but by then the bar made from it was the standard, and the idea of a shared, rational system had taken hold. Over the next two centuries the definitions moved from metal bars to physical constants. Since 1983 the metre has been the distance light travels in a vacuum in 1/299 792 458 of a second, and since 2019 the kilogram has been fixed by a value of Planck's constant rather than by a metal cylinder kept near Paris.
@@ -21,6 +23,8 @@ The system that grew from that project is the International System of Units, cal
 | Time | second | s |
 
 The other four are the ampere for electric current, the kelvin for temperature, the mole for amount of substance and the candela for brightness as the eye perceives it. They will appear later in the course, when those quantities do.
+
+The modern definitions show what a good standard looks like. The second is exactly 9 192 631 770 oscillations of the radiation from a particular transition in the caesium-133 atom, and since every caesium atom is identical, any good laboratory can count the same second. The metre follows by fixing the speed of light, and the kilogram by fixing Planck's constant, whose units are kg·m²/s. No definition depends any longer on an object that could be scratched or lost: a standard is now a number assigned to a constant of nature.
 
 Every other unit is **derived**, meaning it is made by multiplying and dividing base units. Speed is distance divided by time, so its unit is metres per second, m/s. Acceleration is the change in speed per unit of time, so its unit is metres per second per second, m/s². Force gets a name of its own, the newton (N), but the name is only shorthand: one newton is the force that gives one kilogram an acceleration of one metre per second per second, so 1 N = 1 kg·m/s². Nothing new has been introduced; the newton is the base units in disguise.
 
@@ -44,6 +48,21 @@ Only metres and seconds remain, which is the unit we wanted, and the arithmetic 
 :::
 
 So 90 km/h is 25 metres every second. That number is worth a moment's thought: a car at that speed crosses the length of a tennis court in about one second, which is a more vivid picture of the hazard than the figure on the sign.
+
+The same method handles units that are squared or cubed, which is where conversions most often go wrong. Water has a density of 1 gram per cubic centimetre, and suppose you want that in the SI unit, kilograms per cubic metre. The mass part is easy: a gram is a thousandth of a kilogram. The volume part needs more care. A metre is 100 centimetres, but a cubic metre is a cube 100 centimetres on each side, so it holds 100 × 100 × 100 = 1 000 000 cubic centimetres. The conversion fraction has to be applied three times, once for each power.
+
+::: steps Converting 1 g/cm³ to kg/m³
+$ 1\,\frac{\text{g}}{\text{cm}^3} \times \frac{1\,\text{kg}}{1000\,\text{g}}
+Grams are on top and we want kilograms there, so we multiply by a fraction equal to 1 with grams underneath. The grams cancel and the mass is now in kilograms. The quantity is 0.001 kg/cm³, which looks small only because a cubic centimetre is a small box.
+---
+$ \times \left( \frac{100\,\text{cm}}{1\,\text{m}} \right)^3
+The unit cm³ means cm × cm × cm, so to cancel it we need three factors of centimetres on top. Cubing the fraction 100 cm / 1 m does exactly that, and since the fraction equals 1, its cube equals 1 too. The cube puts 100³ = 10⁶ in the numerator and m³ underneath.
+---
+$ = 1000\,\frac{\text{kg}}{\text{m}^3}
+Multiplying 0.001 by 10⁶ gives 1000, and only kg and m³ remain. A cubic metre of water, a box one metre along each edge, has a mass of a whole tonne.
+:::
+
+That tonne surprises most people, and it is why a full bath is far too heavy to lift. The general lesson is that a factor of 100 in length becomes 10 000 in area and a million in volume; forgetting the power is the commonest slip in conversion, and cancelling units one by one prevents it.
 
 ## Dimensions: the kind of quantity
 
@@ -69,11 +88,64 @@ Notice what the check could and could not do. It could not tell us the factor of
 Units obey the rules of algebra: they multiply, divide and cancel, and the two sides of any true equation must have the same dimensions. If the dimensions do not match, the equation is wrong, however reasonable the numbers look.
 :::
 
+## Going deeper: laws from dimensions alone
+
+Dimensional analysis can do more than check a formula you already have. Sometimes it can find one you do not. The method is to list the quantities you think the answer depends on, and then ask which combination of them has the right dimensions. Often there is only one.
+
+Take a pendulum: a weight on a string of length L, swinging back and forth under gravity g. How long does one swing take? The period T might depend on the length of the string, on the mass m of the weight, and on the strength of gravity. Suppose the answer is some pure number times L, m and g each raised to some power. The dimensions on the two sides have to agree, and that turns out to be enough to fix the powers.
+
+::: steps The period of a pendulum by dimensional analysis
+$ T = k\, L^a\, m^b\, g^c
+We guess that the period is a product of powers of the three quantities it could depend on, times a pure number k that dimensional analysis cannot see. The task is to find the exponents a, b and c. This guess is the real assumption in the method: we are betting that nothing else, such as air resistance, matters.
+---
+$ \mathrm{T}^1 = \mathrm{L}^a\, \mathrm{M}^b \left( \frac{\mathrm{L}}{\mathrm{T}^2} \right)^c
+Replace each quantity by its dimensions: the period is a time, L is a length, m is a mass, and g is an acceleration, L/T². The number k has no dimensions and drops out. For the two sides to be the same kind of quantity, the powers of L, of M and of T must each match separately.
+---
+$ b = 0, \quad a + c = 0, \quad -2c = 1
+Mass appears only through m, and there is no mass on the left, so b must be zero. Length appears in L and in g, and the total power of length on the right, a + c, must equal the zero on the left. Time appears only through g, giving a power of −2c, which must equal 1.
+---
+$ c = -\tfrac{1}{2}, \quad a = \tfrac{1}{2}
+Solving these three simple equations gives c = −½ and therefore a = +½. The exponents are now fixed; there was only one way to make the dimensions agree.
+---
+$ T = k \sqrt{\frac{L}{g}}
+Putting the powers back gives the period as a pure number times the square root of L over g. Two results have appeared without any knowledge of how pendulums work: a longer string swings more slowly, as the square root of its length, and the mass of the weight does not matter at all.
+:::
+
+A full analysis, in the lesson The Pendulum, gives k = 2π for small swings. For a one-metre string, √(1 / 9.81) is about 0.32 seconds, and 2π times that is about 2.0 seconds. That is why a pendulum about a metre long was used in clocks that ticked once a second: each one-way swing takes one second. Dimensional analysis got everything except the 2π.
+
+::: history 1950 · London
+In 1947 the United States released photographs of the first atomic explosion, the Trinity test of July 1945, taken with a high-speed camera and marked with a scale and the time after detonation. The energy of the blast was still a secret. The British physicist G. I. Taylor reasoned that the radius R of the expanding fireball should depend only on the energy released E, the time since the explosion t, and the density of the air ρ. The only combination of those three with the dimensions of length is (Et²/ρ)^⅕, so the energy should be roughly ρR⁵/t². A fireball with a radius of about 130 metres at 25 thousandths of a second, in air of density about 1.2 kg/m³, gives roughly 7 × 10¹³ joules. Taylor, who had worked out the theory in detail during the war, published an estimate equivalent to about 17 kilotons of TNT in 1950, close to the figure that was still classified.
+:::
+
+## Common misconceptions
+
+The first misconception is that units are labels you attach at the end, after the real work is done with the numbers. Units carried through every line of a calculation will catch a misplaced division or a forgotten conversion at the moment it happens; units added at the end can only be guessed.
+
+A second is that mass and weight are the same, because both are loosely called "weighing". In physics they are different quantities with different dimensions. Mass, in kilograms, measures how much matter there is and how hard it is to accelerate. Weight is the force gravity exerts on that mass, in newtons, and it changes from place to place. A 70 kg person has a weight of about 690 N on Earth and about 110 N on the Moon, but their mass is 70 kg in both places. A bathroom scale reads in kilograms only because it quietly divides the force by Earth's gravity.
+
+A third concerns quantities with no dimension, such as angles. An angle in radians is an arc length divided by a radius, a length over a length, so it is dimensionless. But dimensionless does not mean that the unit is irrelevant. Degrees and radians are both dimensionless, yet sin(30) is 0.5 if 30 means degrees and about −0.99 if it means radians. Here the unit is a choice of scale, and it still has to be stated.
+
 ## What happens when units are ignored
 
 The rules can sound pedantic until you see what breaking them costs. In September 1999, NASA's Mars Climate Orbiter arrived at Mars after a nine-month journey and was lost. The investigation found that ground software written by the spacecraft's builder reported the push from small thruster firings in pound-force seconds, while the navigation software that used those figures expected newton-seconds. One pound-force second is about 4.45 newton-seconds, so every small push was being underestimated by that factor.
 
 No single error was large, which is why it went unnoticed. But the thrusters fired many times during the cruise, and each firing nudged the predicted path a little further from the real one. When the orbiter reached Mars, it passed far lower through the atmosphere than planned, an estimated 57 kilometres up instead of the intended 150 or so, and it was destroyed. The spacecraft had cost about 125 million dollars. Nothing about the physics was hard; a number had simply been passed along without its unit, and the unit was the part that mattered.
+
+## Limits of dimensional reasoning
+
+Dimensional analysis is powerful because it is cheap, and it is limited for the same reason: it knows only the kinds of quantities involved, not how they interact. Three limits matter in practice.
+
+The first, already seen, is that it is blind to pure numbers. It found √(L/g) for the pendulum but could not supply the 2π, and it cannot tell ½mv² from mv² or from 3mv². When the missing number is close to 1, as in Taylor's estimate, the answer is good; when it is 2π, the answer is off by six times.
+
+The second is that it cannot choose the variables for you. The pendulum argument worked because we guessed correctly that only L, m and g matter. Had we included air resistance, there would have been more than one way to make a time, and dimensions alone could not have chosen between them. In general, whenever two quantities in the list can be combined into a dimensionless ratio, such as the angle of swing of a pendulum, the answer may depend on that ratio in any way at all, and only real physics can say how. For the pendulum, the period does grow slowly with the angle of swing, which is why the 2π is exact only for small swings.
+
+The third is that matching dimensions does not guarantee a correct equation, and two different quantities can share the same dimensions. Energy and torque, the turning effect of a force, are both measured in newton-metres, [M·L²/T²], yet they are physically different things, and adding one to the other is nonsense that dimensional analysis will not catch. A dimensional check is a necessary test, not a sufficient one: it can prove an equation wrong but never prove it right.
+
+## Where it shows up
+
+Every later lesson in this course leans on units, and most of them use dimensional analysis at least once, often silently. In Orders of Magnitude, the next lesson, units and powers of ten combine into the habit of estimating before calculating. In Constant Acceleration and Free Fall you will derive the formula v = √(2gh) that the dimensional check above anticipated. F = ma explains why the newton is a kilogram metre per second squared, and Work and Kinetic and Potential Energy introduce the joule, which is a newton-metre, and so a kilogram metre squared per second squared. The Pendulum supplies the 2π that dimensional analysis could not, and Calculating c shows how the speed of light, now built into the definition of the metre, was first worked out from electrical measurements.
+
+Outside physics, the same habits matter wherever numbers carry consequences. Drug doses are calculated per kilogram of body weight, and confusing milligrams with micrograms, a factor of a thousand, is a known cause of medical error. Engineers test scale models of ships and aircraft by matching dimensionless ratios between model and full size, which is dimensional analysis put to work.
 
 ::: quiz
 ? A formula claims that the time for an object to fall a height h is t = h/g. Is it dimensionally correct?
@@ -91,4 +163,14 @@ No single error was large, which is why it went unnoticed. But the thrusters fir
 - sin(x)
 + x/t²
 = x/t² has the dimensions of an acceleration, a perfectly good quantity. Adding a length to a time breaks the rule that only like quantities add, and the sine of a length is meaningless because sine needs a dimensionless input.
+? By dimensional analysis, the period of a mass bouncing on a spring depends on the mass m and the spring's stiffness k, which has units of N/m = kg/s². Which form must the period take?
+- T ∝ √(k/m)
++ T ∝ √(m/k)
+- T ∝ m/k
+= m/k has dimensions kg ÷ (kg/s²) = s², so its square root is a time. √(k/m) would be one over a time, and m/k alone would be a time squared.
+? How many square centimetres are in one square metre?
+- 100
+- 1000
++ 10 000
+= A square metre is 100 cm on each side, so it holds 100 × 100 = 10 000 square centimetres. Each power of the unit needs its own conversion factor.
 :::

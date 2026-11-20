@@ -73,6 +73,47 @@ Newton proved that they do. A body whose mass is arranged in spherically symmetr
 g = \frac{GM}{R^2}
 :::
 
+The formula says something worth noticing: the mass of the falling object is nowhere in it. Every object at a planet's surface falls with the same acceleration, which is Galileo's result again, now explained. A larger mass is pulled harder, in exact proportion, and resists acceleration more, in exact proportion, so the two effects cancel.
+
+## Worked examples: the Moon, the Sun and two people
+
+The law is most useful when it is put to work on numbers, and three examples show three different things it can do: predict, weigh and compare.
+
+First, prediction. The Moon has a mass of about 7.35 × 10²² kg and a radius of about 1,737 km. Putting these into g = GM/R² gives 6.674 × 10⁻¹¹ × 7.35 × 10²² divided by (1.737 × 10⁶)², which is about 1.62 m/s², roughly one sixth of Earth's surface gravity. That is the value the Apollo astronauts experienced, and it is why they could bound across the surface with heavy backpacks. Notice how the two factors work against each other. The Moon has about 1/81 of Earth's mass, which on its own would make its gravity 81 times weaker, but its radius is only about 0.27 of Earth's, and being that much closer to the centre multiplies the pull by about 13. Mass and size both matter, and neither alone tells you how heavy you will feel.
+
+Second, weighing. Turn the circular-orbit argument around: if the Sun's pull GMm/r² supplies a planet's centripetal force m·4π²r/T², then the Sun's mass is M = 4π²r³/(GT²). Earth's orbit has r = 1.496 × 10¹¹ m and T = 1 year = 3.156 × 10⁷ s. Working this out gives M ≈ 2.0 × 10³⁰ kg, about 330,000 times Earth's mass. The planet's own mass has cancelled, so a single orbit, of anything, weighs the body at the centre. This is how the masses of the Sun, of Jupiter from its moons, and of distant stars from their companions are found. There is one catch: you need G, and until G was measured, as described in Weighing the Earth, astronomers knew only the product GM, not M itself.
+
+::: steps Weighing the Sun with Earth's orbit
+$ \frac{GMm}{r^2} = \frac{4\pi^2 m r}{T^2}
+Gravity is the only force on Earth in its orbit, so it must supply exactly the centripetal force a circular orbit needs. On the left is the Sun's pull; on the right is Earth's mass times the centripetal acceleration derived earlier.
+---
+$ M = \frac{4\pi^2 r^3}{G T^2}
+Earth's mass m appears on both sides and cancels. Multiplying both sides by r² and dividing by G leaves the Sun's mass in terms of the orbit's radius and period and the constant G. This is Kepler's third law with its constant explained: C = 4π²/(GM).
+---
+$ M = \frac{4\pi^2 (1.496 \times 10^{11})^3}{6.674 \times 10^{-11} \times (3.156 \times 10^7)^2} \\ \approx 1.99 \times 10^{30}\,\text{kg}
+With the numbers in, the top is about 1.32 × 10³⁵ and the bottom about 6.65 × 10⁴, and their ratio is the mass of the Sun. The whole calculation needs only a distance, a time and G.
+:::
+
+Third, comparison. Two people of 70 kg each, standing 1 m apart, attract each other with F = 6.674 × 10⁻¹¹ × 70 × 70 / 1², about 3 × 10⁻⁷ N, roughly the weight of a grain of fine sand. Earth and Moon, by contrast, pull on each other with about 2 × 10²⁰ N. Both come from the same formula. Gravity is the weakest force we deal with, yet it dominates astronomy, because it adds up: every kilogram attracts every other, there is no negative mass to cancel it, and planets and stars contain enormous numbers of kilograms.
+
+## Going deeper: gravity inside the Earth
+
+The shell theorem has a second half, and it leads somewhere surprising. Newton also proved that a uniform spherical shell exerts no net force at all on anything inside it. The pulls from the near part of the shell, which is close but small, exactly cancel those from the far part, which is distant but large. That is another result that works only for an inverse-square force: the area of a patch of shell seen at a given angle grows as the square of its distance, and the pull from each piece falls as the square, so the two match.
+
+This tells us how gravity behaves if you go down a deep shaft. Everything above you is a shell, and it pulls you nowhere. Only the sphere of material below you counts.
+
+::: steps Gravity at depth in a uniform planet
+$ M(r) = M \frac{r^3}{R^3}
+Suppose, for simplicity, that the planet has the same density all the way through. A ball of radius r inside it then holds a fraction r³/R³ of the total mass, because volume goes as the cube of the radius. The rest of the planet, the shell outside radius r, contributes nothing.
+---
+$ g(r) = \frac{G M(r)}{r^2} = \frac{GM}{R^3}\, r
+Apply the outside form of the law to the inner ball alone. One power of r³ on top and r² below leave a single r: inside a uniform planet, gravity grows in direct proportion to the distance from the centre. It is zero at the centre, where everything pulls equally in all directions, and reaches its full value g at the surface.
+:::
+
+A force that grows in proportion to the distance from a centre, pulling back toward it, is exactly the kind that produces simple harmonic motion, as the lesson Simple Harmonic Motion explains. Drop a stone down an imaginary airless tunnel straight through a uniform Earth and it would fall through the centre, rise to the far side and fall back, oscillating forever. Each one-way trip would take π√(R/g), which for Earth is about 42 minutes. Remarkably, the same 42 minutes holds for a straight tunnel between any two points on the surface, not only one through the centre.
+
+The real Earth is not uniform. Its iron core is far denser than its rocky mantle, so as you descend through the mantle you get closer to that dense core faster than you lose the mantle above you, and gravity actually increases slightly at first, to about 10.7 m/s² at the boundary of the core 2,900 km down, before falling to zero at the centre. Seismologists use measurements of this kind, together with earthquake waves, to work out how density changes inside the planet.
+
 ::: note
 One force law, F = GMm/r², explains a falling apple, the Moon's orbit and all three of Kepler's laws. Gravity on Earth and gravity in the heavens are the same force, weakening with the square of the distance.
 :::

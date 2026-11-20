@@ -72,11 +72,72 @@ The first factor falls with energy and the second rises, so their product has a 
 The Coulomb barrier between two protons is about 1 MeV, some 800 times the typical thermal energy in the Sun's core, so classically no fusion would ever happen. Quantum tunnelling lets protons with only a few keV pass through the barrier. Fusion happens mainly in the narrow Gamow window, where the falling number of fast protons and their rising tunnelling probability balance.
 :::
 
-## What tunnelling does not explain
+## Where does the Gamow energy come from?
+
+The formula for P(E) was stated above, not derived, and it is worth seeing where it comes from, because the derivation shows what the exponent really measures. The starting point is the rule from the lesson on tunnelling. Inside a barrier of height V, a particle of energy E has a wave that does not oscillate but dies away, falling by a factor e for every distance 1/κ, where κ = √(2m(V − E))/ħ. A taller barrier, or a heavier particle, makes κ larger and the decay faster. When the barrier's height changes from place to place, as the Coulomb hill does, the wave decays a little in each thin slice, at the rate set by the local height, and the total effect is found by adding up the decay across all the slices.
+
+::: steps The tunnelling exponent for a Coulomb barrier
+$ P \approx \exp\left(-\frac{2}{\hbar}\int_{R}^{r_c} \sqrt{2m_r\left(V(r)-E\right)}\,\mathrm{d}r\right)
+The probability is the square of the wave's amplitude, which is why the factor 2 appears in front: the amplitude falls by e^(−∫κ dr) across the barrier, and the probability by the square of that. The mass is the reduced mass m_r, because what tunnels is the separation between the two nuclei. The integral runs from R, where the strong force takes over, out to r_c, the point where an incoming nucleus would classically stop and turn back.
+---
+$ V(r) = \frac{Z_1 Z_2 k e^2}{r}, \quad r_c = \frac{Z_1 Z_2 k e^2}{E}
+The barrier is the electrical potential energy, and the turning point is where it equals the incoming energy. For two protons at 6 keV, r_c is 1.44 MeV fm divided by 0.006 MeV, or 240 fm, while R is only about 1.4 fm. The barrier is therefore about two hundred times wider than a proton. Most of the decay happens across that long, low outer stretch, not near the peak, so very little is lost by letting the integral start at zero instead of R.
+---
+$ \int_0^{r_c} \sqrt{\frac{Z_1 Z_2 k e^2}{r} - E}\,\mathrm{d}r = \frac{\pi}{2}\,\frac{Z_1 Z_2 k e^2}{\sqrt{E}}
+This integral can be done exactly by changing variable to an angle (r = r_c sin²θ), and the answer is surprisingly tidy. It grows in proportion to the product of the charges, because a stronger repulsion makes the barrier both taller and wider, and it falls as 1/√E, because a faster nucleus starts its tunnelling closer in and has less barrier left to cross.
+---
+$ P \approx \exp\left(-2\pi Z_1 Z_2 \frac{\alpha c}{v}\right)
+Put the integral back into the exponent and use two substitutions: ke² = αħc, which is the definition of the fine-structure constant, and E = ½m_r v², where v is the speed at which the nuclei approach each other. Planck's constant cancels out of the exponent, and what is left is strikingly simple. Tunnelling depends on how fast the nuclei approach compared with αc, which is c/137, or about 2,200 km/s.
+---
+$ 2\pi Z_1 Z_2 \frac{\alpha c}{v} = \sqrt{\frac{2 m_r c^2 \left(\pi \alpha Z_1 Z_2\right)^2}{E}} = \sqrt{\frac{E_G}{E}}
+Writing v back in terms of E and gathering the constants under one square root gives exactly the Gamow energy defined earlier. For two protons at 6 keV, v is about 0.5% of the speed of light, and 2παc/v is about 9, the same exponent found before from E_G.
+:::
+
+The form 2πZ₁Z₂αc/v makes the physics easy to read. Nuclei that meet slowly, compared with a speed of a couple of thousand kilometres per second, have almost no chance of getting through; nuclei that meet fast pass easily. Charge makes things worse in direct proportion inside the exponent, which is why the effect of adding protons is so brutal.
+
+The derivation also shows why fusion rates are so sensitive to temperature. Combining the tunnelling factor with the Maxwell–Boltzmann factor and finding where their product peaks gives the centre of the Gamow window:
+
+::: equation The centre of the Gamow window
+E_0 = \left(\frac{E_G\,(kT)^2}{4}\right)^{1/3}
+:::
+
+For two protons in the Sun, with E_G = 490 keV and kT = 1.3 keV, this gives about 6 keV, as quoted above. At the peak the two exponents together come to 3E₀/kT, about 14 for two protons. A small rise in temperature lowers that combined exponent, and because the rate depends on it exponentially, the rate climbs far faster than the temperature. Near the Sun's central temperature the proton–proton rate goes up roughly as the fourth power of T: a core 10% hotter fuses about 50% faster. That steepness acts as a thermostat. If the core heats a little, the burning speeds up, the extra pressure makes the core expand and cool, and the rate falls back.
+
+## Two worked cases
+
+The same formulas handle any pair of nuclei, and two contrasting examples show their reach.
+
+First, a proton meeting a carbon-12 nucleus in the Sun's core, the first step of the CNO cycle. The reduced mass is 12/13 of a proton mass, about 860 MeV, and Z₁Z₂ = 6. The Gamow energy is 2 × 860 MeV × (π × 6/137)², about 33 MeV, nearly seventy times the proton–proton value. At kT = 1.3 keV the Gamow window centres on about 24 keV, where the tunnelling probability is e^(−37), about 10⁻¹⁶. Including the scarcity of protons that fast, the combined exponent at the peak is about 55, against 14 for two protons. Per encounter, then, carbon is harder to reach by a factor of about e⁴¹, roughly 10¹⁸. That the CNO cycle supplies even 1% of the Sun's power is due to the proton–proton chain's other handicap, the weak-force step, which carbon does not need during the collision. And because its combined exponent is four times larger, the CNO rate rises much more steeply with temperature, roughly as T¹⁸ near the Sun's centre, which is why it wins in only slightly hotter stars.
+
+Second, deuterium meeting tritium in a fusion reactor at kT = 10 keV, about 116 million kelvin. The reduced mass is about 1.2 atomic mass units, or 1,125 MeV, and Z₁Z₂ = 1, so E_G is about 1.18 MeV. The Gamow window centres on about 31 keV, where the tunnelling probability is about e^(−6.2), or 2 × 10⁻³: one approach in five hundred gets through, compared with one in ten thousand for protons in the Sun. More important, deuterium and tritium need no weak-force conversion once they touch. The strong force rearranges them directly into helium-4 and a neutron, helped by an unstable state of helium-5 at about 64 keV that makes them especially eager to combine. Together these make the deuterium–tritium reaction roughly 10²⁴ times faster, pair for pair, than proton–proton fusion at comparable conditions, which is the only reason a reactor on Earth is thinkable at all.
+
+## Common misconceptions
+
+The most common mistake is to think that fusion needs a plasma hot enough for nuclei to go over the barrier. Neither stars nor reactors come close. The Sun's protons have about a thousandth of the barrier energy, and a reactor's deuterium and tritium, at 10 keV, have a few percent of their barrier of a few hundred keV. Every fusion reaction in the universe at ordinary stellar temperatures happens by tunnelling.
+
+A second picture, popular in books, says that a tunnelling particle "borrows" the energy it lacks for a brief moment, as the uncertainty principle allows, and pays it back on the far side. It sounds plausible, but it is not the theory and it does not give the right numbers. The barrier here is hundreds of femtometres wide, and a proton could not cross it in the time such a loan would allow. The real statement is the one used above: the wave decays inside the barrier at a calculable rate, and whatever remains on the far side is the chance of finding the particle there.
+
+A third mistake is to think that hotter is always better. The fusion rate does rise steeply with temperature, but not without end. Once the Gamow window has moved up past the barrier's most troublesome region, extra energy helps less, and for deuterium–tritium the reaction rate peaks at a temperature of roughly 65 keV, about 750 million kelvin, and then slowly falls. Meanwhile a hotter plasma loses energy faster as radiation and costs more to confine. Reactors therefore aim at 10–20 keV, where the balance between fusion gained and energy lost is most favourable.
+
+Finally, it is tempting to treat the barrier height as the measure of difficulty. Two protons and two deuterons face exactly the same barrier height, since each nucleus has one unit of charge. But the deuterons are twice as heavy, so their waves decay faster and their Gamow energy is twice as large; by tunnelling alone they fuse less readily. In practice deuterium fuses vastly more easily than ordinary hydrogen, because it needs no weak-force step. The barrier decides how often nuclei touch; what happens when they touch is a separate question.
+
+## What tunnelling does not explain, and where the formula fails
 
 Tunnelling explains why fusion can happen at 15 million kelvin. It does not explain why it happens so slowly. Even after two protons have tunnelled close together, they almost always fly apart again a moment later, because a nucleus of two protons is not stable. Only if the weak force turns one of them into a neutron during that brief contact do they become a deuteron, and that is extremely rare. The barrier lets protons meet; the weak force decides how seldom they stay.
 
 The barrier's dependence on charge also explains a pattern seen across astronomy and engineering. Because E_G grows as (Z₁Z₂)², and the tunnelling probability depends on it exponentially, each step up in nuclear charge makes fusion far harder. That is why the carbon cycle, in which protons must tunnel into carbon nuclei with six times their charge, takes over only in stars with hotter cores than the Sun's. It is also why fusion reactors on Earth use the heavy isotopes of hydrogen, deuterium and tritium, which have only a single unit of charge, and even so must run at around 100 million kelvin, because a reactor cannot afford to wait billions of years for rare events.
+
+That separation points to the main limit of Gamow's formula. It describes only the electrical part of the problem. The full fusion rate is the tunnelling probability multiplied by a factor that measures how readily the nuclei react once they are in contact, which depends on the details of nuclear structure. Physicists call it the **astrophysical S-factor**, and it can differ between reactions by more than twenty powers of ten: tiny for proton–proton, because of the weak force, and large for deuterium–tritium, because of the helium-5 state. It has to be measured. At stellar energies the rates are so small that laboratory measurements are usually made at higher energies and extrapolated down using the tunnelling formula. Since 1991 the LUNA experiment, deep under the Gran Sasso mountain in Italy, where the rock blocks the cosmic rays that would swamp the signal, has measured several solar reactions inside or near their Gamow windows, including the fusion of two helium-3 nuclei.
+
+The formula also treats the nuclei as bare charges in empty space. In a star the surrounding electrons gather slightly around each nucleus and partly hide its charge, which lowers the barrier a little. In the Sun this **electron screening** raises the proton–proton rate by a few percent. At the enormous densities inside white dwarfs and the crusts of neutron stars, the picture changes completely. There nuclei are packed into a crystal, and they can fuse even near absolute zero, because their quantum jiggling about fixed positions brings neighbours close enough to tunnel. This is called **pycnonuclear** fusion, from the Greek for "dense", and temperature plays almost no part in it.
+
+There is one more way to shrink the barrier that has actually been demonstrated. A **muon** is a heavier cousin of the electron, about 207 times as massive. If a muon replaces the electron in a molecule of deuterium and tritium, the molecule shrinks by about the same factor, holding the nuclei so close that they fuse within about a trillionth of a second, with no heat at all. This **muon-catalysed fusion** was seen in 1956 by Luis Alvarez's group at Berkeley. It cannot produce power, though. A muon lives only about 2.2 microseconds, and it sometimes sticks to the helium nucleus it has just helped to make, so each muon catalyses at most about a hundred to a hundred and fifty fusions before it is lost, which releases less energy than making the muon costs.
+
+## Where it shows up
+
+The Coulomb barrier and tunnelling through it run through several lessons in this course. The same calculation, run in reverse, is Gamow's explanation of alpha decay from the lesson on Radioactivity: an alpha particle escaping a nucleus tunnels out through the same kind of barrier, and the exponential sensitivity to energy is why the half-lives in Half-Life range from microseconds to billions of years. The general mechanism is the one in Tunneling, where it also explains the scanning tunnelling microscope and the flash memory in phones, both of which depend on electrons crossing thin barriers.
+
+In this chapter, the barrier is why How Stars Shine needs temperatures of millions of kelvin and why heavier stars switch to the CNO cycle. It is why every design for Fusion Power uses deuterium and tritium and runs at around 100 million kelvin, and why the fuel in Thermonuclear Weapons must be heated by a fission explosion before it will burn. Further on, it explains a fact about the early universe in The Big Bang: as the universe cooled, nuclei with more charge could no longer tunnel into one another fast enough, which is part of the reason the first few minutes made hydrogen and helium but almost nothing heavier. In older stars, as later stages of burning fuse helium into carbon and carbon into heavier elements, each step needs a hotter core because each step faces a higher barrier.
 
 ::: quiz
 ? Roughly how does the Sun's core temperature compare with what classical physics would require for proton fusion?

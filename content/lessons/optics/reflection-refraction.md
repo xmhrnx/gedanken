@@ -1,8 +1,12 @@
 Put a straw in a glass of water and it looks broken where it enters the surface. Look down into a clear swimming pool and the bottom seems closer than it really is. Both illusions have the same cause, and it is a simple one: light travels more slowly in water than in air, and a wave that changes speed while crossing a boundary at an angle also changes direction. This lesson follows that idea from the plain rule for mirrors to the law of refraction, and then to two of its consequences, light trapped inside glass and white light split into colours. Almost every optical instrument, from a pair of spectacles to a fibre-optic cable, depends on what follows here.
 
-## What happens when light bounces?
+## What was there to explain?
 
-Start with the easier half of the story. When light meets a smooth surface such as polished metal or still water, some or all of it comes back. To describe where it goes, we need a way to measure angles that does not depend on how the surface happens to be tilted. The convention is to use the **normal**, an imaginary line standing perpendicular to the surface at the point where the light strikes. The angle between the incoming ray and the normal is the angle of incidence; the angle between the outgoing ray and the normal is the angle of reflection.
+People have known since antiquity that light does two things at a surface. Some of it bounces back, which is how mirrors and still ponds work, and some of it goes in and changes direction, which is why an oar dipped in a lake looks bent. The first behaviour was understood early: Hero of Alexandria pointed out in the first century that a ray bouncing off a mirror takes the shortest possible path between source and eye, and that rule alone fixes where it goes. The second resisted for well over a thousand years. Ptolemy measured the bending carefully and tabulated it, but no simple rule fitted his angles. Double the angle at which light strikes water and the bending does not double, nor does it follow any obvious pattern in the angles themselves.
+
+Behind the missing rule lay a deeper question: why should light bend at all? A beam crossing from air into water passes through no wall and meets no obstacle at the surface, yet it leaves in a new direction. Explaining that needs an idea about what light is and how fast it goes, and the right idea, that light is a wave which moves more slowly in water, was not settled until the nineteenth century. This lesson starts with the easy half and then builds the hard half from the speed of light in matter.
+
+So, the easy half first. When light meets a smooth surface such as polished metal or still water, some or all of it comes back. To describe where it goes, we need a way to measure angles that does not depend on how the surface happens to be tilted. The convention is to use the **normal**, an imaginary line standing perpendicular to the surface at the point where the light strikes. The angle between the incoming ray and the normal is the angle of incidence; the angle between the outgoing ray and the normal is the angle of reflection.
 
 ::: equation The law of reflection
 \theta_r = \theta_i
@@ -67,13 +71,79 @@ Snell's law has a surprise in it. Go from a material with a high index into one 
 
 This comes straight from Snell's law with θ₂ set to 90°, where sin θ₂ = 1. For water into air, sin θ_c = 1/1.33, so θ_c ≈ 48.8°. A swimmer looking up from under water sees the whole sky squeezed into a bright circle overhead, about 97° across, and beyond its edge a silvery mirror reflecting the pool. For glass into air the critical angle is about 42°, and for diamond only about 24°.
 
-The reflection is called total for a reason: an ordinary mirror absorbs a few per cent of the light on every bounce, but total internal reflection loses essentially nothing. That is what makes optical fibres possible. A fibre is a glass thread finer than a hair, with a core of slightly higher index than the glass around it. Light sent in at a shallow angle meets the boundary beyond the critical angle every time, and bounces along the thread through every bend, for tens of kilometres before it needs boosting. Most of the world's telephone and internet traffic travels this way. Diamond's small critical angle explains its sparkle: light that enters a well-cut stone strikes the back faces beyond 24° and is reflected around inside, leaving only through the top, so the stone throws back far more light than glass of the same shape.
+The reflection is called total for a reason: an ordinary mirror absorbs a few per cent of the light on every bounce, but total internal reflection loses essentially nothing. That is what makes optical fibres possible. A fibre is a glass thread finer than a hair, with a core of slightly higher index than the glass around it, called the cladding. Light sent in at a shallow angle meets the boundary beyond the critical angle every time, and bounces along the thread through every bend, for tens of kilometres before it needs boosting. The cladding matters more than it might seem: a bare glass thread would also trap light, but every fingerprint, speck of dust or touching neighbour on its surface would change the index outside and let light leak away. With the guiding boundary buried inside the glass, the outer surface can be handled freely. Most of the world's telephone and internet traffic travels this way. Diamond's small critical angle explains its sparkle: light that enters a well-cut stone strikes the back faces beyond 24° and is reflected around inside, leaving only through the top, so the stone throws back far more light than glass of the same shape.
 
 ## Why does a prism make colours?
 
 The refractive index is not quite a single number. It depends slightly on the wavelength of the light, because the electrons in glass respond a little differently to fields oscillating at different frequencies. In ordinary glass, violet light meets a higher index than red, so violet slows more and bends more. This spreading of colours by refraction is called **dispersion**. A beam of white light, which contains all the visible wavelengths mixed together, enters a prism and leaves as a fan, red bent least and violet most. Newton showed in the 1660s that the colours were in the white light all along: a second prism, turned the other way, merges them back into white.
 
 A rainbow is dispersion in raindrops. Sunlight enters each drop, reflects once off its back surface, and leaves, with each colour bent by a slightly different amount. Red light leaves at about 42° from the direction opposite the Sun and violet at about 40°, which is why the bow is a circle of that size around the shadow of your own head, red on the outside.
+
+The spread is small. In a common optical glass the index is about 1.514 for red light and about 1.522 for blue, a difference of half a per cent. That is enough to separate the colours over a few metres, and enough to blur the image in a simple lens, as the next lesson explains, but it is far too small to notice when you look through a window.
+
+## Working through some numbers
+
+Snell's law is easy to state, and the best way to get a feel for it is to put numbers into it. Three cases show three different sides of it: an ordinary bend, the design of a fibre, and the size of dispersion.
+
+First, a ray of sunlight strikes a calm lake at 45° from the vertical. Air has n₁ ≈ 1.00 and water n₂ = 1.33, so sin θ₂ = sin 45°/1.33 = 0.707/1.33 ≈ 0.532, which gives θ₂ ≈ 32°. The ray has turned 13° toward the vertical. Had the lake been made of glass with n = 1.5, the angle would have been about 28°: the higher the index, the more sharply the light is pulled toward the normal. Notice that the bending is not proportional to the index in any simple way. It is the sines of the angles, not the angles, that keep a fixed ratio, which is exactly what defeated Ptolemy, whose measurements were good but whose guess was a rule in the angles themselves.
+
+::: equation A ray entering water at 45°
+\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 = \frac{\sin 45^\circ}{1.33} \approx 0.532
+:::
+
+Second, a telecommunications fibre has a core of index 1.48 and cladding of index 1.46. The critical angle at the core boundary is given by sin θ_c = 1.46/1.48 ≈ 0.986, so θ_c ≈ 80.6°. That is a very steep angle, measured from the normal to the wall, which means a ray is trapped only if it travels within about 9.4° of the fibre's axis. Light entering from air at the flat end bends toward the axis as it goes in, and working back through Snell's law, the widest cone of light the fibre can accept from outside has a half-angle of about 14°. Light arriving at a steeper slant leaks into the cladding and is lost. Even the trapped light pays a price for its zigzag: a ray at the edge of the cone travels about 1.4 per cent farther than one running straight down the axis, so over a kilometre the two arrive about 70 nanoseconds apart. Short pulses smear out, which limits how fast data can be sent. Long-distance fibres avoid this by making the core so narrow, about 9 micrometres, that only one way of travelling through it survives. At that size the ray picture no longer describes the light well, a hint of the limits discussed below.
+
+Third, the time light spends in that fibre. Its speed in the core is c/1.48 ≈ 2.03 × 10⁸ m/s, so crossing 100 km takes about 0.49 milliseconds, against 0.33 milliseconds through vacuum. For traders sending orders between financial exchanges, that difference is worth money, and some routes have been replaced by microwave links through air, where n is almost exactly 1.
+
+Finally, dispersion. Send white light into that common optical glass at 60°. Red light, meeting n = 1.514, refracts to about 34.9°; blue light, meeting n = 1.522, to about 34.7°. A fifth of a degree separates them. That is small, but a prism bends the light at two faces, both in the same sense, and a screen a few metres away turns a fifth of a degree into a spread of colour about a centimetre wide.
+
+## Going deeper: the path of least time
+
+The wavefront argument derives Snell's law from the picture of light as a wave. There is a second derivation that looks completely different and gives the same answer, and comparing the two is illuminating. It is the one Fermat used, and it rests on a single principle: of all the paths light could take between two points, it takes the one that needs the least time.
+
+For reflection this reproduces Hero's rule, since in a single medium least time means shortest distance. For refraction it is more interesting. Imagine a lifeguard on the beach who must reach a swimmer out in the water. She runs faster than she swims, so the straight line is not the quickest route: it pays to run a little farther along the beach and swim a shorter distance. But running all the way to the point opposite the swimmer wastes too much time on sand. The best route is a compromise, and finding it is a problem in the lesson Rates of Change: write the total time as a function of where she enters the water, and find where its derivative is zero.
+
+::: steps Snell's law from least time
+$ T(x) = \frac{\sqrt{a^2 + x^2}}{v_1} + \frac{\sqrt{b^2 + (d - x)^2}}{v_2}
+Put the source a height a above the boundary and the destination a depth b below it, a horizontal distance d further along. Let the light cross the boundary at a point a horizontal distance x from the source. Each leg is the hypotenuse of a right triangle, found by Pythagoras, and dividing each length by its speed gives the time spent on it. The total time T depends on the one free choice, x.
+---
+$ \frac{\mathrm{d}T}{\mathrm{d}x} = \frac{x}{v_1\sqrt{a^2 + x^2}} \\ \qquad - \frac{d - x}{v_2\sqrt{b^2 + (d - x)^2}} = 0
+At the quickest path, moving the crossing point a little either way does not change the time to first order, so the derivative of T with respect to x is zero. Differentiating each square root gives the two terms; the second has a minus sign because moving the crossing point forward shortens the second leg.
+---
+$ \frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}
+Look at the triangles again. The fraction x/√(a² + x²) is the opposite side over the hypotenuse for the angle between the first leg and the normal, which is sin θ₁. In the same way, the second fraction is sin θ₂. Setting the derivative to zero therefore says that the sine of each angle divided by the speed on that side is the same.
+---
+$ n_1 \sin\theta_1 = n_2 \sin\theta_2
+Multiply both sides by c, and use c/v = n on each side. This is Snell's law again, reached without mentioning wavefronts at all.
+:::
+
+That two such different arguments agree is no accident. In the wave picture, the paths close to the quickest one take almost the same time, so the waves along them arrive in step and reinforce each other, while waves along other paths arrive out of step and cancel. Least time is what the wave picture looks like when the wavelength is small. The same idea, that nature picks the path along which neighbouring paths agree, returns in quantum mechanics, where it governs the motion of electrons as well as light.
+
+There is a second question the ray picture leaves open: how much light reflects and how much goes through? Maxwell's equations, applied at the boundary, answer it. For light arriving straight on, the fraction reflected is ((n₁ − n₂)/(n₁ + n₂))². For air and glass that is (0.5/2.5)² = 0.04, so a window reflects about 4 per cent of the light at each surface. In daylight that is lost against the bright scene beyond, but at night, with a dark garden outside and a lit room inside, the 4 per cent is all you see, and the window becomes a mirror. For water the figure is about 2 per cent, and for diamond about 17 per cent, which adds to its brilliance. At grazing angles the reflected fraction climbs toward 100 per cent for every material, which is why a lake seen at a low angle looks like a sheet of sky.
+
+## Common misconceptions
+
+A popular explanation of why light slows in glass says that each photon is absorbed by an atom, held for a moment, and then emitted again, so the delays add up. That picture fails. An atom that absorbs and re-emits light sends it off in a random direction, so a beam treated this way would come out as a diffuse glow, not a sharp image. And real absorption happens only at particular frequencies, while glass slows all visible light by nearly the same amount. The slowing is the forward combination of the original wave and the waves from electrons driven in step with it, as described above. Between atoms, the field still moves at c.
+
+A second common belief is that a mirror swaps left and right. Raise your right hand in front of a mirror and the image raises the hand on the same side of the picture; nothing has moved sideways. What the mirror reverses is front and back, the direction along the normal. We describe the image as left-right swapped only because we imagine walking round to stand where it is, which is a rotation that the mirror never made.
+
+It is also easy to think that light curves gradually as it enters water. In a uniform material it travels in a straight line; all the turning happens at the boundary. Gradual curving does happen, but only where the index itself changes gradually, as in air over a hot road. Finally, total internal reflection does not need a silvered surface. It happens at a bare boundary between two transparent materials, and its completeness comes from Snell's law having no solution, not from any coating.
+
+## Where the ray picture stops working
+
+Everything in this lesson treats light as rays that travel in straight lines and bend at surfaces. That works when the objects involved are much larger than the wavelength of light, about half a micrometre. Shine light through a gap only a few wavelengths wide and it spreads out into the shadow, which no ray can do. Rays then have to give way to the full wave picture, which is the subject of the lessons Diffraction and The Double Slit.
+
+Even total internal reflection is not quite what the ray picture says. The wave does not stop dead at the boundary: a weak field, called an evanescent wave, reaches about a wavelength into the outer material and fades rapidly. It carries no energy away, so the reflection is still total. But bring a second block of glass within a fraction of a micrometre and some light jumps the gap and carries on, an effect called frustrated total internal reflection. Some fingerprint scanners use it: ridges of skin touching the glass let light escape where valleys of air do not. It is the optical cousin of quantum tunnelling, met later in Tunneling.
+
+Snell's law also assumes the material is the same in every direction. Some crystals, such as calcite, are not: they have two refractive indices depending on how the light's electric field is oriented, so a single ray entering them splits in two and you see a double image through them. And the index is not always greater than 1. For X-rays, whose frequency is far above the natural frequencies of the electrons in glass, n is very slightly less than 1, so X-rays striking glass at a grazing angle from air are totally reflected. X-ray telescopes are built from nested mirrors at grazing angles for exactly this reason.
+
+## Where it shows up
+
+Refraction is the working principle of every lens, from the cornea of your eye to a camera, and the next lesson, Lenses and Images, builds directly on Snell's law. Total internal reflection carries the internet through undersea fibres, folds the light path inside binoculars, where glass prisms replace mirrors because they lose nothing at each bounce, and lets the rain sensor on a car windscreen detect drops that spoil the reflection.
+
+In nature, refraction by air whose index changes with temperature makes mirages. Near a hot road, the lowest air is warmest and has a slightly lower index, so light from the sky heading down bends gradually upward and reaches your eye from below, where it looks like a pool of water on the road. The whole atmosphere bends starlight in the same way, lifting objects near the horizon by about half a degree, roughly the width of the Sun. When you watch the Sun touch the horizon at sunset, it has already, geometrically, gone below it.
+
+The ideas here also look back and forward. That light slows in matter follows from it being an electromagnetic wave, as in Electromagnetic Waves and Calculating c, and the dependence of the index on wavelength is what lets a prism lay out The Spectrum. Bending Light, in general relativity, describes how gravity deflects starlight, a different cause that produces lens-like effects on a cosmic scale.
 
 ::: note
 Refraction happens because light changes speed between materials, and a wavefront crossing a boundary at an angle pivots as one end slows before the other. The geometry gives Snell's law, n₁ sin θ₁ = n₂ sin θ₂, and from it follow the bending toward the normal, total internal reflection beyond the critical angle, and the splitting of colours by a prism.
@@ -99,4 +169,14 @@ Ptolemy, working in Alexandria around 150 AD, measured how much light bends ente
 + No, it needs light to go from a higher index into a lower one
 - Yes, at every angle
 = Entering a material with a higher index, the ray bends toward the normal, so Snell's law always has a solution. Only when light heads into a lower index can the refracted angle reach 90° and the light be trapped.
+? A ray inside a block of glass (n = 1.5) meets a boundary with water (n = 1.33) at 70° from the normal. What happens?
+- It passes into the water, bending toward the normal
+- It passes into the water, bending away from the normal
++ It is totally reflected back into the glass
+= The critical angle from glass into water is given by sin θ_c = 1.33/1.5, so θ_c ≈ 62°. The ray arrives at 70°, beyond that, so Snell's law has no solution and all the light is reflected.
+? Why does a window look like a mirror at night but not during the day?
+- Glass reflects more light when it is cold
++ It always reflects about 4 per cent of the light, which only dominates when little light comes through from outside
+- At night the glass becomes totally internally reflecting
+= Each air-glass surface reflects ((n − 1)/(n + 1))² ≈ 4 per cent whatever the time of day. By day that weak reflection is swamped by bright light from outside; at night the dark scene beyond lets it show.
 :::
